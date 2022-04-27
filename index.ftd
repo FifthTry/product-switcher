@@ -1,1 +1,271 @@
--- ft.page: hello
+-- import: fpm
+-- import: fifthtry.github.io/brand-switcher/assets
+-- import: fifthtry.github.io/typography as tf
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fifthtry.github.io/inter/assets as font-assets
+
+
+-- fpm.font-display: $font-assets.fonts.Inter
+
+-- integer global-index: 1 
+
+
+-- ftd.color shadow-color:
+light: rgba(45, 212, 191, 0.2)
+dark: rgba(45, 212, 191, 0.2)
+
+
+-- ftd.column:
+id: code-wrap
+width: fill
+align: center
+spacing: 20
+padding-horizontal: 50
+padding-vertical: 20
+background-color: $fpm.color.main.background.base
+height: fill
+
+-- pd.package: Brand Switcher component
+name: fifthtry.github.io/brand-switcher
+
+This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
+
+
+
+
+
+
+
+
+
+-- record brands:
+caption title:
+body body:
+integer index:
+boolean selected-brand:
+optional ftd.image-src logo: 
+optional string sub-title:
+optional string button-text:
+
+-- brands list list-brands:
+
+-- list-brands: Product Name 1
+index: 1
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: true
+sub-title: Optional Title 1
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+-- list-brands: Product Name 2
+index: 2
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 2
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+-- list-brands: Product Name 3
+index: 3
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 3
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+-- list-brands: Product Name 4
+index: 4
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 4
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+
+
+-- brand-switcher: 
+brands-list: $list-brands
+
+
+
+-- ftd.row brand-switcher:
+caption title: Product Name
+padding-horizontal: $fpm.space.space-4
+padding-vertical: $fpm.space.space-2
+color: $fpm.color.main.background.step-1
+background-color: $fpm.color.main.cta-primary.base
+border-radius: 4
+id: switcher
+boolean mouse-entered: false
+brands list brands-list:
+$on-mouse-enter$: $mouse-entered = true
+boolean bottom-left: false
+boolean bottom-right: false
+boolean top-left: false
+boolean top-right: false
+
+--- ftd.row:
+id: 
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+color: $fpm.color.main.background.step-1
+cursor: pointer
+
+--- ftd.image:
+src: $assets.files.assets.images.triangle-down.png
+cursor: pointer
+
+--- ftd.row:
+if: $mouse-entered
+anchor: parent
+width: fill
+height: fill
+min-width: 460
+min-height: 300
+border-radius: 8
+left: -16
+top: 27
+background-color: $fpm.color.main.background.base
+shadow-offset-x: 0
+shadow-offset-y: 3
+shadow-size: 4
+shadow-color: $shadow-color
+z-index: 11
+padding: $fpm.space.space-2
+$on-mouse-enter$: $mouse-entered = true
+$on-mouse-leave$: $mouse-entered = false
+
+--- product-list:
+
+
+
+
+
+
+
+
+
+
+-- ftd.row product-list:
+
+--- title-list:
+
+--- copy-list:
+$loop$: $list-brands as $obj
+copy: $obj.body
+index: $obj.index
+selected-brand: $obj.selected-brand
+logo: $obj.logo
+sub-title: $obj.sub-title
+button-text: $obj.button-text
+
+
+
+
+
+
+
+
+
+
+-- ftd.column title-list:
+
+--- title-image: $obj.title
+$loop$: $list-brands as $obj
+index: $obj.index
+selected-brand: $obj.selected-brand
+
+-- ftd.row title-image:
+caption title: 
+integer index: 
+ftd.image-src image: $assets.files.assets.images.brand-logo.png
+$on-click$: $global-index = $index
+boolean selected-brand: 
+
+--- ftd.row:
+width: fill
+padding-vertical: $fpm.space.space-4
+padding-horizontal: $fpm.space.space-4
+padding-right: $fpm.space.space-6
+background-color: $fpm.color.main.background.base
+
+/--- ftd.row:
+width: fill
+padding-vertical: $fpm.space.space-4
+padding-horizontal: $fpm.space.space-4
+padding-right: $fpm.space.space-6
+background-color: $fpm.color.main.background.step-1
+
+--- ftd.image:
+/src: $assets.files.assets.images.brand-logo.png
+src: $image
+margin-right: $fpm.space.space-2
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+color: $fpm.color.main.text
+white-space: nowrap
+
+
+
+
+
+
+
+
+
+
+-- ftd.column copy-list:
+optional string copy:
+optional ftd.color menu-hover: $fpm.color.main.text-strong
+integer index:
+optional boolean selected-brand:
+optional ftd.image-src logo: 
+optional string sub-title:
+optional string button-text:
+width: fill
+boolean mouse-in: false
+if: $global-index == $index
+
+--- ftd.row:
+width: fill
+id: right-row
+padding-vertical: $fpm.space.space-4
+padding-horizontal: $fpm.space.space-4
+
+--- ftd.column:
+
+--- ftd.text: $sub-title
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $copy
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+
+--- ftd.text: $button-text
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+padding-vertical: $fpm.space.space-2
+padding-horizontal: $fpm.space.space-4
+background-color: $fpm.color.main.cta-primary.base
+color: $fpm.color.main.cta-primary.text
+border-radius: 4
+cursor: pointer
