@@ -20,7 +20,7 @@ mobile: $fpm.type.copy-relaxed.mobile
 xl: $fpm.type.copy-relaxed.xl
 weight: 700
 
--- integer global-index: 2 
+-- integer current-brand: 4
 
 
 -- ftd.color shadow-color:
@@ -40,7 +40,7 @@ min-height: 3000
 height: fill
 
 -- pd.package: Brand Switcher component
-name: fifthtry.github.io/brand-switcher
+name: fifthtry.github.io/switcher
 
 This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
 
@@ -48,21 +48,19 @@ This package can be used to show multiple brands and it's short description with
 
 -- pd.hidden-code: List of items
 
-\-- record brands:
+\-- record brand-data:
 caption title:
 body body:
 integer index:
-boolean current:
 optional ftd.image-src logo: 
 optional string sub-title:
 optional string button-text:
 
-\-- brands list brand-list:
+\-- brand-data list brand:
 
-\-- brand-list: Product Name 1
+\-- brand: Product Name 1
 index: 1
 logo: $assets.files.assets.images.brand-logo.png
-current: false
 sub-title: Optional Title 1
 button-text: ACTION
 
@@ -71,10 +69,9 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- brand-list: Product Name 2
+\-- brand: Product Name 2
 index: 2
 logo: $assets.files.assets.images.brand-logo.png
-current: true
 sub-title: Optional Title 2
 button-text: ACTION
 
@@ -83,10 +80,9 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- brand-list: Product Name 3
+\-- brand: Product Name 3
 index: 3
 logo: $assets.files.assets.images.brand-logo.png
-current: false
 sub-title: Optional Title 3
 button-text: ACTION
 
@@ -95,10 +91,9 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- brand-list: Product Name 4
+\-- brand: Product Name 4
 index: 4
 logo: $assets.files.assets.images.brand-logo.png
-current: false
 sub-title: Optional Title 4
 button-text: ACTION
 
@@ -109,37 +104,37 @@ This is a product Description, this can go to multple lines, it can also have bu
 
 
 
--- pd.output: Basic usage example - brand dropdown at bottom-left position
-reference: $assets.files.assets.images.brand-switcher-demo.png
+-- pd.output: Basic usage example - brand dropdown at on-left position
+reference: $assets.files.assets.images.switcher-demo.png
 reference-width: 400
 
 
-\-- brand-switcher: 
-brand-list: $brand-list
-bottom-left: true 
 
--- brand-switcher: 
-brand-list: $brand-list
-bottom-left: true 
+\-- switcher: 
+brand: $brand
+on-left: true 
+
+
+-- switcher: 
+brand: $brand
+on-left: true 
 
 
 -- container: code-wrap
 
 
--- pd.output: Basic usage example - brand dropdown at bottom-right position
-reference: $assets.files.assets.images.brand-switcher-demo.png
+-- pd.output: Basic usage example - brand dropdown at on-right position
+reference: $assets.files.assets.images.switcher-demo.png
 reference-width: 400
 
 
-\-- brand-switcher: 
-brand-list: $brand-list
-bottom-right: true 
+\-- switcher: 
+brand: $brand
+on-right: true 
 
--- brand-switcher: 
-brand-list: $brand-list
-bottom-right: true 
-
-
+-- switcher: 
+brand: $brand
+on-right: true 
 
 
 
@@ -152,73 +147,73 @@ bottom-right: true
 
 
 
--- record brands:
+
+
+-- record brand-data:
 caption title:
 body body:
 integer index:
-boolean current:
+string url:
 optional ftd.image-src logo: 
 optional string sub-title:
 optional string button-text:
 
--- brands list brand-list:
+-- brand-data list brand:
 
--- brand-list: Product Name 1
+-- brand: cDoc
 index: 1
 logo: $assets.files.assets.images.brand-logo.png
-current: false
-sub-title: Optional Title 1
+url: https://fifthtry.github.io/cdoc-doc/
+sub-title: `cdoc`: FifthTry Continuous Documentation
 button-text: ACTION
 
-This is a product Description, this can go to multple lines, it can also have bullets
+`cdoc` is an open source web application that integrates with Github and works like continuous integration.
 
-- Something
-- Something else
+- Initial Setup Flow
+- Self Hosted Flow
 
--- brand-list: Product Name 2
+-- brand: FTD
 index: 2
 logo: $assets.files.assets.images.brand-logo.png
-current: true
-sub-title: Optional Title 2
+url: https://ftd.dev/
+sub-title: Why FTD?
 button-text: ACTION
 
-This is a product Description, this can go to multple lines, it can also have bullets
+FTD gives you a lot of power over your presentation, and yet it is quite easy to learn.
 
-- Something
-- Something else
+- FTD Is Easy To Learn
+- FTD Is Quite Powerful
 
--- brand-list: Product Name 3
+-- brand: FPM
 index: 3
 logo: $assets.files.assets.images.brand-logo.png
-current: false
-sub-title: Optional Title 3
+url: https://fpm.dev/
+sub-title: `ftd` package manager
 button-text: ACTION
 
-This is a product Description, this can go to multple lines, it can also have bullets
+`fpm` is `ftd package manager`, defines a package format for packaging `ftd` files.
 
-- Something
-- Something else
+- Distributed Package Manager
+- Translation Tracking
 
--- brand-list: Product Name 4
+-- brand: ftd-py
 index: 4
 logo: $assets.files.assets.images.brand-logo.png
-current: false
-sub-title: Optional Title 4
+url: https://fifthtry.github.io/python.ftd.dev/
+sub-title: `ftd-py` Documentation
 button-text: ACTION
 
-This is a product Description, this can go to multple lines, it can also have bullets
+`ftd-py`: Python Package for Working With FTD/FPM
 
-- Something
-- Something else
-
-
+- Python Package for Working With `FTD/FPM`
+- `ftd_django` is a Python package
 
 
 
 
 
--- ftd.row brand-switcher:
-caption title: Product Name
+
+-- ftd.row switcher:
 padding-horizontal: $fpm.space.space-4
 padding-vertical: $fpm.space.space-2
 color: $fpm.color.main.background.step-1
@@ -226,19 +221,19 @@ background-color: $fpm.color.main.cta-primary.base
 border-radius: 4
 id: switcher
 boolean visible: false
-brands list brand-list:
+brand-data list brand:
 $on-mouse-enter$: $visible = true
-boolean bottom-left: false
-boolean bottom-right: false
-align if $bottom-left: left
-align if $bottom-right: right
+boolean on-left: false
+boolean on-right: false
+align if $on-left: left
+align if $on-right: right
 
 --- ftd.row:
 
---- ftd.text: $title
-role: $bold-small
-color: $fpm.color.main.background.step-1
-cursor: pointer
+--- brand-title: $obj.title
+$loop$: $brand as $obj
+index: $obj.index
+
 
 --- ftd.image:
 src: $assets.files.assets.images.triangle-down.png
@@ -252,10 +247,10 @@ width: fill
 min-width: 460
 min-height: 270
 border-radius: 8
-left if $bottom-left: -16
-top if $bottom-left: 27
-right if $bottom-right: -16
-top if $bottom-right: 27
+left if $on-left: -16
+top if $on-left: 27
+right if $on-right: -16
+top if $on-right: 27
 background-color: $fpm.color.main.background.base
 shadow-offset-x: 0
 shadow-offset-y: 3
@@ -264,7 +259,7 @@ shadow-color: $shadow-color
 z-index: 11
 $on-mouse-enter$: $visible = true
 $on-mouse-leave$: $visible = false
-$on-mouse-leave$: $global-index = 2
+$on-mouse-leave$: $current-brand = 2
 $on-click-outside$: $visible = false
 
 --- product-list:
@@ -282,13 +277,13 @@ padding: $fpm.space.space-2
 --- title-list:
 
 --- copy-list:
-$loop$: $brand-list as $obj
+$loop$: $brand as $obj
 copy: $obj.body
 index: $obj.index
-current: $obj.current
 logo: $obj.logo
 sub-title: $obj.sub-title
 button-text: $obj.button-text
+url: $obj.url
 
 
 
@@ -302,10 +297,10 @@ button-text: $obj.button-text
 -- ftd.column title-list:
 
 --- title-image: $obj.title
-$loop$: $brand-list as $obj
+$loop$: $brand as $obj
 index: $obj.index
-current: $obj.current
-
+logo: $obj.logo
+url: $obj.url
 
 
 
@@ -318,9 +313,9 @@ current: $obj.current
 -- ftd.row title-image:
 caption title: 
 integer index: 
-ftd.image-src image: $assets.files.assets.images.brand-logo.png
-$on-mouse-enter$: $global-index = $index
-boolean current: 
+optional ftd.image-src logo:
+string url:  
+$on-mouse-enter$: $current-brand = $index
 background-color: $fpm.color.main.background.base
 width: fill
 
@@ -331,10 +326,11 @@ padding-horizontal: $fpm.space.space-4
 padding-right: $fpm.space.space-6
 padding-bottom: $fpm.space.space-6
 background-color: $fpm.color.main.background.base
-background-color if $global-index == $index: $fpm.color.main.background.step-1
+background-color if $current-brand == $index: $fpm.color.main.background.step-1
 border-left-radius: 4
 color: $fpm.color.main.text
-color if $global-index == $index: $fpm.color.main.text-strong
+color if $current-brand == $index: $fpm.color.main.text-strong
+link: $url
 
 /--- ftd.row:
 width: fill
@@ -344,8 +340,7 @@ padding-right: $fpm.space.space-6
 background-color: $fpm.color.main.background.step-1
 
 --- ftd.image:
-/src: $assets.files.assets.images.brand-logo.png
-src: $image
+src: $logo
 margin-right: $fpm.space.space-2
 
 --- ftd.text: $title
@@ -366,14 +361,14 @@ width: fill
 optional string copy:
 optional ftd.color menu-hover: $fpm.color.main.text-strong
 integer index:
-optional boolean current:
-optional ftd.image-src logo: 
+string url:
 optional string sub-title:
 optional string button-text:
 width: fill
 boolean mouse-in: false
-if: $global-index == $index
+if: $current-brand == $index
 background-color: $fpm.color.main.background.step-1
+link: $url
 
 --- ftd.row:
 width: fill
@@ -399,4 +394,21 @@ padding-horizontal: $fpm.space.space-4
 background-color: $fpm.color.main.cta-primary.base
 color: $fpm.color.main.cta-primary.text
 border-radius: 4
+cursor: pointer
+
+
+
+
+
+
+
+
+
+
+-- ftd.text brand-title: $title
+integer index:
+caption title:
+if: $index == $current-brand
+role: $bold-small
+color: $fpm.color.main.background.step-1
 cursor: pointer
