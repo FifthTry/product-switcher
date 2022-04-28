@@ -36,12 +36,113 @@ spacing: 20
 padding-horizontal: 50
 padding-vertical: 20
 background-color: $fpm.color.main.background.base
+min-height: 3000
 height: fill
 
 -- pd.package: Brand Switcher component
 name: fifthtry.github.io/brand-switcher
 
 This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
+
+
+
+-- pd.hidden-code: List of items
+
+\-- record brands:
+caption title:
+body body:
+integer index:
+boolean selected-brand:
+optional ftd.image-src logo: 
+optional string sub-title:
+optional string button-text:
+
+\-- brands list list-brands:
+
+\-- list-brands: Product Name 1
+index: 1
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 1
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- list-brands: Product Name 2
+index: 2
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: true
+sub-title: Optional Title 2
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- list-brands: Product Name 3
+index: 3
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 3
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- list-brands: Product Name 4
+index: 4
+logo: $assets.files.assets.images.brand-logo.png
+selected-brand: false
+sub-title: Optional Title 4
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+
+
+-- pd.output: Basic usage example - brand dropdown at bottom-left position
+reference: $assets.files.assets.images.brand-switcher-demo.png
+reference-width: 400
+
+
+\-- brand-switcher: 
+brands-list: $list-brands
+bottom-left: true 
+
+-- brand-switcher: 
+brands-list: $list-brands
+bottom-left: true 
+
+
+-- container: code-wrap
+
+
+-- pd.output: Basic usage example - brand dropdown at bottom-right position
+reference: $assets.files.assets.images.brand-switcher-demo.png
+reference-width: 400
+
+
+\-- brand-switcher: 
+brands-list: $list-brands
+bottom-right: true 
+
+-- brand-switcher: 
+brands-list: $list-brands
+bottom-right: true 
+
+
+
+
+
 
 
 
@@ -112,8 +213,7 @@ This is a product Description, this can go to multple lines, it can also have bu
 
 
 
--- brand-switcher: 
-brands-list: $list-brands
+
 
 
 
@@ -130,8 +230,8 @@ brands list brands-list:
 $on-mouse-enter$: $mouse-entered = true
 boolean bottom-left: false
 boolean bottom-right: false
-boolean top-left: false
-boolean top-right: false
+align if $bottom-left: left
+align if $bottom-right: right
 
 --- ftd.row:
 
@@ -148,12 +248,14 @@ cursor: pointer
 if: $mouse-entered
 anchor: parent
 width: fill
-height: fill
+/height: fill
 min-width: 460
-min-height: 300
+min-height: 270
 border-radius: 8
-left: -16
-top: 27
+left if $bottom-left: -16
+top if $bottom-left: 27
+right if $bottom-right: -16
+top if $bottom-right: 27
 background-color: $fpm.color.main.background.base
 shadow-offset-x: 0
 shadow-offset-y: 3
@@ -165,8 +267,6 @@ $on-mouse-leave$: $mouse-entered = false
 $on-mouse-leave$: $global-index = 2
 
 --- product-list:
-
-
 
 
 
@@ -270,6 +370,7 @@ optional string button-text:
 width: fill
 boolean mouse-in: false
 if: $global-index == $index
+background-color: $fpm.color.main.background.step-1
 
 --- ftd.row:
 width: fill
