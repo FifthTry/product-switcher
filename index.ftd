@@ -7,7 +7,20 @@
 
 -- fpm.font-display: $font-assets.fonts.Inter
 
--- integer global-index: 1 
+-- ftd.type bold-small: $fpm.type.label-small.font
+desktop: $fpm.type.label-small.desktop
+mobile: $fpm.type.label-small.mobile
+xl: $fpm.type.label-small.xl
+weight: 700
+
+
+-- ftd.type copy-relaxed-bold: $fpm.type.copy-relaxed.font
+desktop: $fpm.type.copy-relaxed.desktop
+mobile: $fpm.type.copy-relaxed.mobile
+xl: $fpm.type.copy-relaxed.xl
+weight: 700
+
+-- integer global-index: 2 
 
 
 -- ftd.color shadow-color:
@@ -52,7 +65,7 @@ optional string button-text:
 -- list-brands: Product Name 1
 index: 1
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: true
+selected-brand: false
 sub-title: Optional Title 1
 button-text: ACTION
 
@@ -64,7 +77,7 @@ This is a product Description, this can go to multple lines, it can also have bu
 -- list-brands: Product Name 2
 index: 2
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+selected-brand: true
 sub-title: Optional Title 2
 button-text: ACTION
 
@@ -121,10 +134,9 @@ boolean top-left: false
 boolean top-right: false
 
 --- ftd.row:
-id: 
 
 --- ftd.text: $title
-role: $fpm.type.label-big
+role: $bold-small
 color: $fpm.color.main.background.step-1
 cursor: pointer
 
@@ -148,9 +160,9 @@ shadow-offset-y: 3
 shadow-size: 4
 shadow-color: $shadow-color
 z-index: 11
-padding: $fpm.space.space-2
 $on-mouse-enter$: $mouse-entered = true
 $on-mouse-leave$: $mouse-entered = false
+$on-mouse-leave$: $global-index = 2
 
 --- product-list:
 
@@ -164,6 +176,7 @@ $on-mouse-leave$: $mouse-entered = false
 
 
 -- ftd.row product-list:
+padding: $fpm.space.space-2
 
 --- title-list:
 
@@ -192,19 +205,34 @@ $loop$: $list-brands as $obj
 index: $obj.index
 selected-brand: $obj.selected-brand
 
+
+
+
+
+
+
+
+
+
 -- ftd.row title-image:
 caption title: 
 integer index: 
 ftd.image-src image: $assets.files.assets.images.brand-logo.png
-$on-click$: $global-index = $index
+$on-mouse-enter$: $global-index = $index
 boolean selected-brand: 
+background-color: $fpm.color.main.background.base
 
 --- ftd.row:
 width: fill
 padding-vertical: $fpm.space.space-4
 padding-horizontal: $fpm.space.space-4
 padding-right: $fpm.space.space-6
+padding-bottom: $fpm.space.space-6
 background-color: $fpm.color.main.background.base
+background-color if $global-index == $index: $fpm.color.main.background.step-1
+border-left-radius: 4
+color: $fpm.color.main.text
+color if $global-index == $index: $fpm.color.main.text-strong
 
 /--- ftd.row:
 width: fill
@@ -219,8 +247,7 @@ src: $image
 margin-right: $fpm.space.space-2
 
 --- ftd.text: $title
-role: $fpm.type.label-big
-color: $fpm.color.main.text
+role: $bold-small
 white-space: nowrap
 
 
@@ -253,7 +280,7 @@ padding-horizontal: $fpm.space.space-4
 --- ftd.column:
 
 --- ftd.text: $sub-title
-role: $fpm.type.copy-relaxed
+role: $copy-relaxed-bold
 color: $fpm.color.main.text-strong
 
 --- ftd.text: $copy
