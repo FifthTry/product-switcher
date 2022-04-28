@@ -52,17 +52,17 @@ This package can be used to show multiple brands and it's short description with
 caption title:
 body body:
 integer index:
-boolean selected-brand:
+boolean current:
 optional ftd.image-src logo: 
 optional string sub-title:
 optional string button-text:
 
-\-- brands list list-brands:
+\-- brands list brand-list:
 
-\-- list-brands: Product Name 1
+\-- brand-list: Product Name 1
 index: 1
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 1
 button-text: ACTION
 
@@ -71,10 +71,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- list-brands: Product Name 2
+\-- brand-list: Product Name 2
 index: 2
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: true
+current: true
 sub-title: Optional Title 2
 button-text: ACTION
 
@@ -83,10 +83,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- list-brands: Product Name 3
+\-- brand-list: Product Name 3
 index: 3
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 3
 button-text: ACTION
 
@@ -95,10 +95,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
-\-- list-brands: Product Name 4
+\-- brand-list: Product Name 4
 index: 4
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 4
 button-text: ACTION
 
@@ -115,11 +115,11 @@ reference-width: 400
 
 
 \-- brand-switcher: 
-brands-list: $list-brands
+brand-list: $brand-list
 bottom-left: true 
 
 -- brand-switcher: 
-brands-list: $list-brands
+brand-list: $brand-list
 bottom-left: true 
 
 
@@ -132,11 +132,11 @@ reference-width: 400
 
 
 \-- brand-switcher: 
-brands-list: $list-brands
+brand-list: $brand-list
 bottom-right: true 
 
 -- brand-switcher: 
-brands-list: $list-brands
+brand-list: $brand-list
 bottom-right: true 
 
 
@@ -156,17 +156,17 @@ bottom-right: true
 caption title:
 body body:
 integer index:
-boolean selected-brand:
+boolean current:
 optional ftd.image-src logo: 
 optional string sub-title:
 optional string button-text:
 
--- brands list list-brands:
+-- brands list brand-list:
 
--- list-brands: Product Name 1
+-- brand-list: Product Name 1
 index: 1
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 1
 button-text: ACTION
 
@@ -175,10 +175,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
--- list-brands: Product Name 2
+-- brand-list: Product Name 2
 index: 2
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: true
+current: true
 sub-title: Optional Title 2
 button-text: ACTION
 
@@ -187,10 +187,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
--- list-brands: Product Name 3
+-- brand-list: Product Name 3
 index: 3
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 3
 button-text: ACTION
 
@@ -199,10 +199,10 @@ This is a product Description, this can go to multple lines, it can also have bu
 - Something
 - Something else
 
--- list-brands: Product Name 4
+-- brand-list: Product Name 4
 index: 4
 logo: $assets.files.assets.images.brand-logo.png
-selected-brand: false
+current: false
 sub-title: Optional Title 4
 button-text: ACTION
 
@@ -225,9 +225,9 @@ color: $fpm.color.main.background.step-1
 background-color: $fpm.color.main.cta-primary.base
 border-radius: 4
 id: switcher
-boolean mouse-entered: false
-brands list brands-list:
-$on-mouse-enter$: $mouse-entered = true
+boolean visible: false
+brands list brand-list:
+$on-mouse-enter$: $visible = true
 boolean bottom-left: false
 boolean bottom-right: false
 align if $bottom-left: left
@@ -245,7 +245,7 @@ src: $assets.files.assets.images.triangle-down.png
 cursor: pointer
 
 --- ftd.row:
-if: $mouse-entered
+if: $visible
 anchor: parent
 width: fill
 /height: fill
@@ -262,9 +262,10 @@ shadow-offset-y: 3
 shadow-size: 4
 shadow-color: $shadow-color
 z-index: 11
-$on-mouse-enter$: $mouse-entered = true
-$on-mouse-leave$: $mouse-entered = false
+$on-mouse-enter$: $visible = true
+$on-mouse-leave$: $visible = false
 $on-mouse-leave$: $global-index = 2
+$on-click-outside$: $visible = false
 
 --- product-list:
 
@@ -281,10 +282,10 @@ padding: $fpm.space.space-2
 --- title-list:
 
 --- copy-list:
-$loop$: $list-brands as $obj
+$loop$: $brand-list as $obj
 copy: $obj.body
 index: $obj.index
-selected-brand: $obj.selected-brand
+current: $obj.current
 logo: $obj.logo
 sub-title: $obj.sub-title
 button-text: $obj.button-text
@@ -301,9 +302,9 @@ button-text: $obj.button-text
 -- ftd.column title-list:
 
 --- title-image: $obj.title
-$loop$: $list-brands as $obj
+$loop$: $brand-list as $obj
 index: $obj.index
-selected-brand: $obj.selected-brand
+current: $obj.current
 
 
 
@@ -319,8 +320,9 @@ caption title:
 integer index: 
 ftd.image-src image: $assets.files.assets.images.brand-logo.png
 $on-mouse-enter$: $global-index = $index
-boolean selected-brand: 
+boolean current: 
 background-color: $fpm.color.main.background.base
+width: fill
 
 --- ftd.row:
 width: fill
@@ -349,6 +351,7 @@ margin-right: $fpm.space.space-2
 --- ftd.text: $title
 role: $bold-small
 white-space: nowrap
+width: fill
 
 
 
@@ -363,7 +366,7 @@ white-space: nowrap
 optional string copy:
 optional ftd.color menu-hover: $fpm.color.main.text-strong
 integer index:
-optional boolean selected-brand:
+optional boolean current:
 optional ftd.image-src logo: 
 optional string sub-title:
 optional string button-text:
