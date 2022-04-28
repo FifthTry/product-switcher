@@ -259,6 +259,7 @@ $on-mouse-leave$: $current-brand = 2
 $on-click-outside$: $visible = false
 
 --- product-list:
+brand: $brand
 
 
 
@@ -269,8 +270,10 @@ $on-click-outside$: $visible = false
 
 -- ftd.row product-list:
 padding-left: $fpm.space.space-2
+brand-data list brand:
 
 --- title-list:
+brand: $brand
 
 --- copy-list:
 $loop$: $brand as $obj
@@ -291,6 +294,7 @@ url: $obj.url
 
 
 -- ftd.column title-list:
+brand-data list brand:
 
 --- title-image: $obj.title
 $loop$: $brand as $obj
@@ -307,10 +311,10 @@ url: $obj.url
 
 
 -- ftd.row title-image:
-caption title: 
-integer index: 
+caption title:
+integer index:
 optional ftd.image-src logo:
-string url:  
+string url:
 $on-mouse-enter$: $current-brand = $index
 background-color: $fpm.color.main.background.base
 width: fill
@@ -343,7 +347,7 @@ height: 32
 
 --- ftd.text: $title
 role: $bold-small
-white-space: nowrap
+/white-space: nowrap
 width: fill
 
 
