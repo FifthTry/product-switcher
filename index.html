@@ -102,7 +102,7 @@
     }
   },
   "fifthtry.github.io/brand-switcher/index#body@0,0,4,2,0": {
-    "value": "-- record brands:\ncaption title:\nbody body:\ninteger index:\nboolean selected-brand:\noptional ftd.image-src logo: \noptional string sub-title:\noptional string button-text:\n\n-- brands list list-brands:\n\n-- list-brands: Product Name 1\nindex: 1\nlogo: $assets.files.assets.images.brand-logo.png\nselected-brand: false\nsub-title: Optional Title 1\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- list-brands: Product Name 2\nindex: 2\nlogo: $assets.files.assets.images.brand-logo.png\nselected-brand: true\nsub-title: Optional Title 2\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- list-brands: Product Name 3\nindex: 3\nlogo: $assets.files.assets.images.brand-logo.png\nselected-brand: false\nsub-title: Optional Title 3\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- list-brands: Product Name 4\nindex: 4\nlogo: $assets.files.assets.images.brand-logo.png\nselected-brand: false\nsub-title: Optional Title 4\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
+    "value": "-- record brands:\ncaption title:\nbody body:\ninteger index:\nboolean current:\noptional ftd.image-src logo: \noptional string sub-title:\noptional string button-text:\n\n-- brands list brand-list:\n\n-- brand-list: Product Name 1\nindex: 1\nlogo: $assets.files.assets.images.brand-logo.png\ncurrent: false\nsub-title: Optional Title 1\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- brand-list: Product Name 2\nindex: 2\nlogo: $assets.files.assets.images.brand-logo.png\ncurrent: true\nsub-title: Optional Title 2\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- brand-list: Product Name 3\nindex: 3\nlogo: $assets.files.assets.images.brand-logo.png\ncurrent: false\nsub-title: Optional Title 3\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else\n\n-- brand-list: Product Name 4\nindex: 4\nlogo: $assets.files.assets.images.brand-logo.png\ncurrent: false\nsub-title: Optional Title 4\nbutton-text: ACTION\n\nThis is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
     "dependencies": {
       "0,0,1,1,2,2,0,1:inner-external:0,0,1": [
         {
@@ -123,7 +123,7 @@
     }
   },
   "fifthtry.github.io/brand-switcher/index#body@0,0,5,1": {
-    "value": "-- brand-switcher: \nbrands-list: $list-brands\nbottom-left: true",
+    "value": "-- brand-switcher: \nbrand-list: $brand-list\nbottom-left: true",
     "dependencies": {
       "0,0,1,1,3,1,1:inner-external:0,0,1": [
         {
@@ -144,7 +144,7 @@
     }
   },
   "fifthtry.github.io/brand-switcher/index#body@0,1,1": {
-    "value": "-- brand-switcher: \nbrands-list: $list-brands\nbottom-right: true",
+    "value": "-- brand-switcher: \nbrand-list: $brand-list\nbottom-right: true",
     "dependencies": {
       "0,1,1,1": [
         {
@@ -770,6 +770,192 @@
               }
             }
           },
+          "remaining": null
+        }
+      ]
+    }
+  },
+  "fifthtry.github.io/brand-switcher/index#brand-list": {
+    "value": [
+      {
+        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
+        "button-text": "ACTION",
+        "current": false,
+        "index": 1,
+        "logo": {
+          "$kind$": "light",
+          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
+          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
+        },
+        "sub-title": "Optional Title 1",
+        "title": "Product Name 1"
+      },
+      {
+        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
+        "button-text": "ACTION",
+        "current": true,
+        "index": 2,
+        "logo": {
+          "$kind$": "light",
+          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
+          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
+        },
+        "sub-title": "Optional Title 2",
+        "title": "Product Name 2"
+      },
+      {
+        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
+        "button-text": "ACTION",
+        "current": false,
+        "index": 3,
+        "logo": {
+          "$kind$": "light",
+          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
+          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
+        },
+        "sub-title": "Optional Title 3",
+        "title": "Product Name 3"
+      },
+      {
+        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
+        "button-text": "ACTION",
+        "current": false,
+        "index": 4,
+        "logo": {
+          "$kind$": "light",
+          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
+          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
+        },
+        "sub-title": "Optional Title 4",
+        "title": "Product Name 4"
+      }
+    ],
+    "dependencies": {
+      "0,0,1,1,3,3,1,0,0,2,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,0,1,1,3,3,1,0,0,2,0,4:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,0,0:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,0,1:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,0,2:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,0,3:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,1:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,2:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,3:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ],
+      "0,1,3,1,0,0,2,0,4:output-container-external:0,1": [
+        {
+          "condition": null,
+          "dependency_type": "Value",
+          "parameters": {},
           "remaining": null
         }
       ]
@@ -2296,218 +2482,6 @@
       ]
     }
   },
-  "fifthtry.github.io/brand-switcher/index#list-brands": {
-    "value": [
-      {
-        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
-        "button-text": "ACTION",
-        "index": 1,
-        "logo": {
-          "$kind$": "light",
-          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
-          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
-        },
-        "selected-brand": false,
-        "sub-title": "Optional Title 1",
-        "title": "Product Name 1"
-      },
-      {
-        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
-        "button-text": "ACTION",
-        "index": 2,
-        "logo": {
-          "$kind$": "light",
-          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
-          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
-        },
-        "selected-brand": true,
-        "sub-title": "Optional Title 2",
-        "title": "Product Name 2"
-      },
-      {
-        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
-        "button-text": "ACTION",
-        "index": 3,
-        "logo": {
-          "$kind$": "light",
-          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
-          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
-        },
-        "selected-brand": false,
-        "sub-title": "Optional Title 3",
-        "title": "Product Name 3"
-      },
-      {
-        "body": "This is a product Description, this can go to multple lines, it can also have bullets\n\n- Something\n- Something else",
-        "button-text": "ACTION",
-        "index": 4,
-        "logo": {
-          "$kind$": "light",
-          "dark": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png",
-          "light": "/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png"
-        },
-        "selected-brand": false,
-        "sub-title": "Optional Title 4",
-        "title": "Product Name 4"
-      }
-    ],
-    "dependencies": {
-      "0,0,1,1,3,3,1,0,0,2,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,0,1,1,3,3,1,0,0,2,0,4:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,0,0:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,0,1:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,0,2:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,0,3:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,1:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,2:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,3:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ],
-      "0,1,3,1,0,0,2,0,4:output-container-external:0,1": [
-        {
-          "condition": null,
-          "dependency_type": "Value",
-          "parameters": {},
-          "remaining": null
-        }
-      ]
-    }
-  },
-  "fifthtry.github.io/brand-switcher/index#mouse-entered@0,0,1,4": {
-    "value": false,
-    "dependencies": {
-      "0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
-        {
-          "condition": true,
-          "dependency_type": "Visible",
-          "parameters": {},
-          "remaining": null
-        }
-      ]
-    }
-  },
-  "fifthtry.github.io/brand-switcher/index#mouse-entered@0,1,4": {
-    "value": false,
-    "dependencies": {
-      "0,1,3,1,0,0,2:output-container-external:0,1": [
-        {
-          "condition": true,
-          "dependency_type": "Visible",
-          "parameters": {},
-          "remaining": null
-        }
-      ]
-    }
-  },
   "fifthtry.github.io/brand-switcher/index#open@0,0,1": {
     "value": true,
     "dependencies": {
@@ -2908,6 +2882,32 @@
         {
           "condition": null,
           "dependency_type": "Value",
+          "parameters": {},
+          "remaining": null
+        }
+      ]
+    }
+  },
+  "fifthtry.github.io/brand-switcher/index#visible@0,0,1,4": {
+    "value": false,
+    "dependencies": {
+      "0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3": [
+        {
+          "condition": true,
+          "dependency_type": "Visible",
+          "parameters": {},
+          "remaining": null
+        }
+      ]
+    }
+  },
+  "fifthtry.github.io/brand-switcher/index#visible@0,1,4": {
+    "value": false,
+    "dependencies": {
+      "0,1,3,1,0,0,2:output-container-external:0,1": [
+        {
+          "condition": true,
+          "dependency_type": "Visible",
           "parameters": {},
           "remaining": null
         }
@@ -23329,17 +23329,17 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#b48ead;">caption title</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">body body</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">integer index</span><span style="color:#65737e;">:
-</span><span style="color:#b48ead;">boolean selected-brand</span><span style="color:#65737e;">:
+</span><span style="color:#b48ead;">boolean current</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">optional ftd.image-src logo</span><span style="color:#65737e;">: 
 </span><span style="color:#b48ead;">optional string sub-title</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">optional string button-text</span><span style="color:#65737e;">:
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brands list list-brands</span><span style="color:#65737e;">:
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brands list brand-list</span><span style="color:#65737e;">:
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 1
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 1
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">1
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 1
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23348,10 +23348,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 2
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 2
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">2
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 2
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23360,10 +23360,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 3
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 3
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">3
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 3
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23372,10 +23372,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 4
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 4
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">4
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 4
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23388,17 +23388,17 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#b48ead;">caption title</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">body body</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">integer index</span><span style="color:#65737e;">:
-</span><span style="color:#b48ead;">boolean selected-brand</span><span style="color:#65737e;">:
+</span><span style="color:#b48ead;">boolean current</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">optional ftd.image-src logo</span><span style="color:#65737e;">: 
 </span><span style="color:#b48ead;">optional string sub-title</span><span style="color:#65737e;">:
 </span><span style="color:#b48ead;">optional string button-text</span><span style="color:#65737e;">:
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brands list list-brands</span><span style="color:#65737e;">:
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brands list brand-list</span><span style="color:#65737e;">:
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 1
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 1
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">1
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 1
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23407,10 +23407,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 2
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 2
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">2
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 2
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23419,10 +23419,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 3
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 3
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">3
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 3
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23431,10 +23431,10 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something
 </span><span style="color:#c0c5ce;">- Something else
 </span><span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">list-brands</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 4
+</span><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#a3be8c;">Product Name 4
 </span><span style="color:#b48ead;">index</span><span style="color:#65737e;">: </span><span style="color:#d08770;">4
 </span><span style="color:#b48ead;">logo</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$assets.files.assets.images.brand-logo.png
-</span><span style="color:#b48ead;">selected-brand</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
+</span><span style="color:#b48ead;">current</span><span style="color:#65737e;">: </span><span style="color:#d08770;">false
 </span><span style="color:#b48ead;">sub-title</span><span style="color:#65737e;">: </span><span style="color:#d08770;">Optional Title 4
 </span><span style="color:#b48ead;">button-text</span><span style="color:#65737e;">: </span><span style="color:#d08770;">ACTION
 </span><span style="color:#c0c5ce;">
@@ -23444,14 +23444,14 @@ body.fpm-dark .ft_md a:visited code {
 </span><span style="color:#c0c5ce;">- Something else
 </span></pre>
 </div></div></div></div><div data-ext-id="inner-external:0,0,1:main" data-id="0,0,1,1,3:inner-external:0,0,1:main" style="align-items: flex-start; border-color: rgba(168,162,158,1); border-left-width: 5px !important; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 20px; margin-top: 30px; padding-bottom: 10px; padding-left: 20px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,0:inner-external:0,0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,0,0:inner-external:0,0,1:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#open@0,0,5,0&quot;,&quot;parameters&quot;:{}}]', this)" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 24px; font-weight: 400; letter-spacing: 0px; line-height: 36px; padding-bottom: 8px; padding-top: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Basic usage example - brand dropdown at bottom-left position</div></div><div data-id="0,0,1,1,3,1:inner-external:0,0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; padding-top: 12px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,1,0:inner-external:0,0,1:main" style="background-color: rgba(88,86,86,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: none; font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" class="ft_md"></div><div data-id="0,0,1,1,3,1,1:inner-external:0,0,1:main" style="background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(168,162,158,1); display: none; font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; overflow-x: auto; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" ><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-switcher</span><span style="color:#65737e;">: 
-</span><span style="color:#b48ead;">brands-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$list-brands
+</span><span style="color:#b48ead;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$brand-list
 </span><span style="color:#b48ead;">bottom-left</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span></pre>
 </div><div data-id="0,0,1,1,3,1,2:inner-external:0,0,1:main" style="background-color: rgba(43,48,59,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-color: rgba(43,48,59,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; overflow-x: auto; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" ><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-switcher</span><span style="color:#65737e;">: 
-</span><span style="color:#b48ead;">brands-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$list-brands
+</span><span style="color:#b48ead;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$brand-list
 </span><span style="color:#b48ead;">bottom-left</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span></pre>
-</div></div><div data-id="0,0,1,1,3,2:inner-external:0,0,1:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#reference-open@0,0,5&quot;,&quot;parameters&quot;:{}}]', this)" style="background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0px; line-height: 28px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Output</div><div data-id="0,0,1,1,3,3:inner-external:0,0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-color: rgba(168,162,158,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,0:inner-external:0,0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-switcher-demo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: 10px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 400px"><div data-id="output-container:0,0,1,1,3,3,1:inner-external:0,0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 100%" ><div data-ext-id="inner-external:0,0,1.output-container-external:0,0,1,1,3:main" data-id="0,0,1,1,3,3,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; align-self: flex-start; background-color: rgba(45,212,191,1); border-radius: 4px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-right: auto; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; padding-top: 8px; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; position: relative; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Product Name</div><img alt="" data-id="0,0,1,1,3,3,1,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/triangle-down.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseleave="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;false&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}},{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 8px; border-style: solid; border-width: 0px; box-shadow: 0px 3px 0px 4px rgba(45,212,191,0.2); box-sizing: border-box; cursor: pointer; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; left: -16px; min-height: 270px; min-width: 460px; position: absolute; text-decoration: none; top: 27px; white-space: initial; width: 100%; z-index: 11" ><div data-id="0,0,1,1,3,3,1,0,0,2,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 8px; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;1&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 1</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 2</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;3&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 3</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;4&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 4</div></div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="right-row:0,0,1,1,3,3,1,0,0,2,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 16px; padding-left: 16px; padding-right: 16px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-family: sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Optional Title 1</div><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p>This is a product Description, this can go to multple lines, it can also have bullets</p>
+</div></div><div data-id="0,0,1,1,3,2:inner-external:0,0,1:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#reference-open@0,0,5&quot;,&quot;parameters&quot;:{}}]', this)" style="background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0px; line-height: 28px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Output</div><div data-id="0,0,1,1,3,3:inner-external:0,0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-color: rgba(168,162,158,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,0:inner-external:0,0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-switcher-demo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: 10px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 400px"><div data-id="output-container:0,0,1,1,3,3,1:inner-external:0,0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 100%" ><div data-ext-id="inner-external:0,0,1.output-container-external:0,0,1,1,3:main" data-id="0,0,1,1,3,3,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; align-self: flex-start; background-color: rgba(45,212,191,1); border-radius: 4px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-right: auto; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; padding-top: 8px; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; position: relative; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Product Name</div><img alt="" data-id="0,0,1,1,3,3,1,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/triangle-down.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseleave="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;false&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}},{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 8px; border-style: solid; border-width: 0px; box-shadow: 0px 3px 0px 4px rgba(45,212,191,0.2); box-sizing: border-box; cursor: pointer; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; left: -16px; min-height: 270px; min-width: 460px; position: absolute; text-decoration: none; top: 27px; white-space: initial; width: 100%; z-index: 11" ><div data-id="0,0,1,1,3,3,1,0,0,2,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 8px; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;1&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 1</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,1,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 2</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;3&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 3</div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;4&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,0,1,1,3,3,1,0,0,2,0,0,3,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 4</div></div></div></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="right-row:0,0,1,1,3,3,1,0,0,2,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 16px; padding-left: 16px; padding-right: 16px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-family: sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Optional Title 1</div><div data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,1,0:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p>This is a product Description, this can go to multple lines, it can also have bullets</p>
 </p><p data-id="0,0,1,1,3,3,1,0,0,2,0,1,0,0,1,1:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><ul>
 <li>Something</li>
 <li>Something else</li>
@@ -23472,14 +23472,14 @@ body.fpm-dark .ft_md a:visited code {
 <li>Something else</li>
 </ul>
 </p></div><div data-id="0,0,1,1,3,3,1,0,0,2,0,4,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main" style="background-color: rgba(45,212,191,1); border-radius: 4px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(254,255,255,1); cursor: pointer; font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; padding-top: 8px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">ACTION</div></div></div></div></div></div></div></div></div></div></div></div></div></div><div data-id="0,1:main" style="align-items: flex-start; border-color: rgba(168,162,158,1); border-left-width: 5px !important; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 20px; margin-top: 20px; padding-bottom: 10px; padding-left: 20px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,0:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,0,0:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#open@0,1,0&quot;,&quot;parameters&quot;:{}}]', this)" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 24px; font-weight: 400; letter-spacing: 0px; line-height: 36px; padding-bottom: 8px; padding-top: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Basic usage example - brand dropdown at bottom-right position</div></div><div data-id="0,1,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; padding-top: 12px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,1,0:main" style="background-color: rgba(88,86,86,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: none; font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" class="ft_md"></div><div data-id="0,1,1,1:main" style="background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(168,162,158,1); display: none; font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; overflow-x: auto; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" ><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-switcher</span><span style="color:#65737e;">: 
-</span><span style="color:#b48ead;">brands-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$list-brands
+</span><span style="color:#b48ead;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$brand-list
 </span><span style="color:#b48ead;">bottom-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span></pre>
 </div><div data-id="0,1,1,2:main" style="background-color: rgba(43,48,59,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-color: rgba(43,48,59,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; overflow-x: auto; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial; width: 100%" ><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">brand-switcher</span><span style="color:#65737e;">: 
-</span><span style="color:#b48ead;">brands-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$list-brands
+</span><span style="color:#b48ead;">brand-list</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$brand-list
 </span><span style="color:#b48ead;">bottom-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">true
 </span></pre>
-</div></div><div data-id="0,1,2:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#reference-open@0,1&quot;,&quot;parameters&quot;:{}}]', this)" style="background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0px; line-height: 28px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Output</div><div data-id="0,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-color: rgba(168,162,158,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,0:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-switcher-demo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: 10px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 400px"><div data-id="output-container:0,1,3,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 100%" ><div data-ext-id="output-container-external:0,1:main" data-id="0,1,3,1,0:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; align-self: flex-end; background-color: rgba(45,212,191,1); border-radius: 4px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-left: auto; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; padding-top: 8px; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; position: relative; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Product Name</div><img alt="" data-id="0,1,3,1,0,0,1:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/triangle-down.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2:output-container-external:0,1:main" onmouseleave="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;false&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}},{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#mouse-entered@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 8px; border-style: solid; border-width: 0px; box-shadow: 0px 3px 0px 4px rgba(45,212,191,0.2); box-sizing: border-box; cursor: pointer; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; min-height: 270px; min-width: 460px; position: absolute; right: -16px; text-decoration: none; top: 27px; white-space: initial; width: 100%; z-index: 11" ><div data-id="0,1,3,1,0,0,2,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 8px; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,0:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;1&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,0,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,0,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,0,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 1</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,1:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,1,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,1,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,1,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 2</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,2:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;3&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,2,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,2,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,2,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 3</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,3:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;4&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,3,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,3,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,3,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap" class="ft_md">Product Name 4</div></div></div></div><div data-id="0,1,3,1,0,0,2,0,1:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="right-row:0,1,3,1,0,0,2,0,1,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 16px; padding-left: 16px; padding-right: 16px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,1,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,1,0,0,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-family: sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Optional Title 1</div><div data-id="0,1,3,1,0,0,2,0,1,0,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p data-id="0,1,3,1,0,0,2,0,1,0,0,1,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p>This is a product Description, this can go to multple lines, it can also have bullets</p>
+</div></div><div data-id="0,1,2:main" onclick="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;toggle&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#reference-open@0,1&quot;,&quot;parameters&quot;:{}}]', this)" style="background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); cursor: pointer; font-family: sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0px; line-height: 28px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Output</div><div data-id="0,1,3:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-color: rgba(168,162,158,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,0:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-switcher-demo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: 10px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 400px"><div data-id="output-container:0,1,3,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; text-decoration: none; white-space: initial; width: 100%" ><div data-ext-id="output-container-external:0,1:main" data-id="0,1,3,1,0:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; align-self: flex-end; background-color: rgba(45,212,191,1); border-radius: 4px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-left: auto; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; padding-top: 8px; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; position: relative; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(20,20,20,1); cursor: pointer; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Product Name</div><img alt="" data-id="0,1,3,1,0,0,1:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/triangle-down.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2:output-container-external:0,1:main" onmouseleave="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;false&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}},{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#visible@0,1,4&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;true&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;boolean&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 8px; border-style: solid; border-width: 0px; box-shadow: 0px 3px 0px 4px rgba(45,212,191,0.2); box-sizing: border-box; cursor: pointer; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; min-height: 270px; min-width: 460px; position: absolute; right: -16px; text-decoration: none; top: 27px; white-space: initial; width: 100%; z-index: 11" ><div data-id="0,1,3,1,0,0,2,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 8px; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,0,0:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;1&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,0,0,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,0,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,0,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 1</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,1:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;2&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,0,1,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,1,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,1,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 2</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,2:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;3&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,0,2,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,2,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,2,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 3</div></div></div><div data-id="0,1,3,1,0,0,2,0,0,3:output-container-external:0,1:main" onmouseenter="window.ftd.handle_event(event, 'main', '[{&quot;action&quot;:&quot;set-value&quot;,&quot;target&quot;:&quot;fifthtry.github.io/brand-switcher/index#global-index&quot;,&quot;parameters&quot;:{&quot;value&quot;:[{&quot;value&quot;:&quot;4&quot;,&quot;reference&quot;:null},{&quot;value&quot;:&quot;integer&quot;,&quot;reference&quot;:null}]}}]', this)" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,0,3,0:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(24,24,27,1); border-bottom-left-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 24px; padding-left: 16px; padding-right: 24px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><img alt="" data-id="0,1,3,1,0,0,2,0,0,3,0,0:output-container-external:0,1:main" src="/brand-switcher/-/fifthtry.github.io/brand-switcher/assets/images/brand-logo.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-right: 8px; text-decoration: none; white-space: initial"><div data-id="0,1,3,1,0,0,2,0,0,3,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: fifthtry-github-io-inter-Inter; font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 16px; text-align: left; text-decoration: none; white-space: nowrap; width: 100%" class="ft_md">Product Name 4</div></div></div></div><div data-id="0,1,3,1,0,0,2,0,1:output-container-external:0,1:main" style="align-items: flex-start; background-color: rgba(20,20,20,1); border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="right-row:0,1,3,1,0,0,2,0,1,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 16px; padding-left: 16px; padding-right: 16px; padding-top: 16px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,1,3,1,0,0,2,0,1,0,0:output-container-external:0,1:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial" ><div data-id="0,1,3,1,0,0,2,0,1,0,0,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-family: sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Optional Title 1</div><div data-id="0,1,3,1,0,0,2,0,1,0,0,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(168,162,158,1); font-family: sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0px; line-height: 24px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p data-id="0,1,3,1,0,0,2,0,1,0,0,1,0:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><p>This is a product Description, this can go to multple lines, it can also have bullets</p>
 </p><p data-id="0,1,3,1,0,0,2,0,1,0,0,1,1:output-container-external:0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; line-height: 26px; text-align: left; text-decoration: none; white-space: initial" class="ft_md"><ul>
 <li>Something</li>
 <li>Something else</li>
@@ -24998,7 +24998,15 @@ window.ftd.post_init = function () {
     }
     initialise_dark_mode();
     initialise_device();
-};
+};document.addEventListener("click", function(event) {
+if (document.querySelector(`[data-id="0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main"]`).style.display !== "none" && !document.querySelector(`[data-id="0,0,1,1,3,3,1,0,0,2:inner-external:0,0,1.output-container-external:0,0,1,1,3:main"]`).contains(event.target)) {
+    window.ftd.handle_event(event, 'main', '[{"action":"set-value","target":"fifthtry.github.io/brand-switcher/index#visible@0,0,1,4","parameters":{"value":[{"value":"false","reference":null},{"value":"boolean","reference":null}]}}]', this);
+}
+
+if (document.querySelector(`[data-id="0,1,3,1,0,0,2:output-container-external:0,1:main"]`).style.display !== "none" && !document.querySelector(`[data-id="0,1,3,1,0,0,2:output-container-external:0,1:main"]`).contains(event.target)) {
+    window.ftd.handle_event(event, 'main', '[{"action":"set-value","target":"fifthtry.github.io/brand-switcher/index#visible@0,1,4","parameters":{"value":[{"value":"false","reference":null},{"value":"boolean","reference":null}]}}]', this);
+}
+});
 
             window.ftd.init("main", "ftd-data", "ftd-external-children");
 
