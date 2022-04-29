@@ -21,6 +21,7 @@ xl: $fpm.type.copy-relaxed.xl
 weight: 700
 
 -- integer current-brand: 4
+-- integer var-current-brand: $current-brand
 
 
 -- ftd.color shadow-color:
@@ -255,7 +256,7 @@ shadow-color: $shadow-color
 z-index: 11
 $on-mouse-enter$: $visible = true
 $on-mouse-leave$: $visible = false
-$on-mouse-leave$: $current-brand = 2
+$on-mouse-leave$: $var-current-brand = $current-brand
 $on-click-outside$: $visible = false
 
 --- product-list:
@@ -315,7 +316,7 @@ caption title:
 integer index:
 optional ftd.image-src logo:
 string url:
-$on-mouse-enter$: $current-brand = $index
+$on-mouse-enter$: $var-current-brand = $index
 background-color: $fpm.color.main.background.base
 width: fill
 
@@ -326,10 +327,10 @@ padding-horizontal: $fpm.space.space-4
 padding-right: $fpm.space.space-6
 padding-bottom: $fpm.space.space-6
 background-color: $fpm.color.main.background.base
-background-color if $current-brand == $index: $fpm.color.main.background.step-1
+background-color if $var-current-brand == $index: $fpm.color.main.background.step-1
 border-left-radius: 4
 color: $fpm.color.main.text
-color if $current-brand == $index: $fpm.color.main.text-strong
+color if $var-current-brand == $index: $fpm.color.main.text-strong
 link: $url
 
 /--- ftd.row:
@@ -370,7 +371,7 @@ width: fill
 min-height: 288
 boolean mouse-in: false
 border-right-radius: 8
-if: $current-brand == $index
+if: $var-current-brand == $index
 background-color: $fpm.color.main.background.step-1
 link: $url
 
@@ -413,7 +414,7 @@ cursor: pointer
 -- ftd.text brand-title: $title
 integer index:
 caption title:
-if: $index == $current-brand
+if: $index == $var-current-brand
 role: $bold-small
 color: $fpm.color.main.background.step-1
 cursor: pointer
