@@ -7,7 +7,19 @@
 
 -- fpm.font-display: $font-assets.fonts.Inter
 
+-- ftd.font-size custom-label-type:
+line-height: 32
+size: 14
+letter-spacing: 0
+
 -- ftd.type bold-small: $fpm.type.label-small.font
+desktop: $custom-label-type
+mobile: $custom-label-type
+xl: $custom-label-type
+weight: 700
+
+
+-- ftd.type bold-small-title: $fpm.type.label-small.font
 desktop: $fpm.type.label-small.desktop
 mobile: $fpm.type.label-small.mobile
 xl: $fpm.type.label-small.xl
@@ -25,8 +37,8 @@ weight: 700
 
 
 -- ftd.color shadow-color:
-light: rgba(45, 212, 191, 0.2)
-dark: rgba(45, 212, 191, 0.2)
+light: rgba(45, 212, 191, 0.1)
+dark: rgba(45, 212, 191, 0.1)
 
 
 -- ftd.column:
@@ -296,6 +308,8 @@ url: $obj.url
 
 -- ftd.column title-list:
 brand-data list brand:
+id: title-row
+width: percent 50
 
 --- title-image: $obj.title
 $loop$: $brand as $obj
@@ -415,6 +429,6 @@ cursor: pointer
 integer index:
 caption title:
 if: $index == $var-current-brand
-role: $bold-small
+role: $bold-small-title
 color: $fpm.color.main.background.step-1
 cursor: pointer
