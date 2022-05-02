@@ -33,12 +33,21 @@ xl: $fpm.type.copy-relaxed.xl
 weight: 700
 
 -- integer current-brand: 4
+
 -- integer var-current-brand: $current-brand
 
 
 -- ftd.color shadow-color:
-light: rgba(45, 212, 191, 0.1)
-dark: rgba(45, 212, 191, 0.1)
+light: rgba(45, 212, 191, 0.2)
+dark: rgba(45, 212, 191, 0.2)
+
+-- ftd.color shadow-color-right:
+light: rgba(45, 212, 191, 0.14)
+dark: rgba(45, 212, 191, 0.2)
+
+-- ftd.color shadow-color-left:
+light: rgba(45, 212, 191, 0.12)
+dark: rgba(45, 212, 191, 0.12)
 
 
 -- ftd.column:
@@ -136,18 +145,18 @@ on-left: true
 -- container: code-wrap
 
 
--- pd.output: Basic usage example - brand dropdown at on-right position
+-- pd.output: Basic usage example - brand dropdown at right position
 reference: $assets.files.assets.images.switcher-demo.png
 reference-width: 400
 
 
 \-- switcher: 
 brand: $brand
-on-right: true 
+on-left: false 
 
 -- switcher: 
 brand: $brand
-on-right: true 
+on-left: false 
 
 
 
@@ -177,7 +186,7 @@ optional string button-text:
 index: 1
 logo: $assets.files.assets.images.doc-framework.png
 url: https://fifthtry.github.io/cdoc-doc/
-sub-title: `cdoc`: FifthTry Continuous Documentation
+sub-title: Continuous Documentation
 
 `cdoc` is an open source web application that integrates with Github and works like continuous integration.
 
@@ -188,7 +197,7 @@ sub-title: `cdoc`: FifthTry Continuous Documentation
 index: 2
 logo: $assets.files.assets.images.ftd.png
 url: https://ftd.dev/
-sub-title: Why FTD?
+sub-title: FifthTry Document
 
 FTD gives you a lot of power over your presentation, and yet it is quite easy to learn.
 
@@ -232,10 +241,9 @@ id: switcher
 boolean visible: false
 brand-data list brand:
 $on-mouse-enter$: $visible = true
-boolean on-left: false
-boolean on-right: false
+boolean on-left: true
 align if $on-left: left
-align if $on-right: right
+align if not $on-left: right
 
 --- ftd.row:
 
@@ -258,18 +266,40 @@ min-height: 255
 border-radius: 8
 left if $on-left: -16
 top if $on-left: 27
-right if $on-right: -16
-top if $on-right: 27
+right if not $on-left: -16
+top if not $on-left: 27
 background-color: $fpm.color.main.background.base
 shadow-offset-x: 0
-shadow-offset-y: 3
-shadow-size: 4
+shadow-offset-y: 4
+shadow-size: 0
+shadow-blur: 4
 shadow-color: $shadow-color
 z-index: 11
 $on-mouse-enter$: $visible = true
 $on-mouse-leave$: $visible = false
 $on-mouse-leave$: $var-current-brand = $current-brand
 $on-click-outside$: $visible = false
+
+--- ftd.row:
+width: fill
+min-width: 460
+min-height: 255
+shadow-offset-x: 0
+shadow-offset-y: 1
+shadow-size: 0
+shadow-blur: 8
+shadow-color: $shadow-color-right
+
+
+--- ftd.row:
+width: fill
+min-width: 460
+min-height: 255
+shadow-offset-x: 0
+shadow-offset-y: 3
+shadow-size: 0
+shadow-blur: 4
+shadow-color: $shadow-color-right
 
 --- product-list:
 brand: $brand
@@ -282,7 +312,6 @@ brand: $brand
 
 
 -- ftd.row product-list:
-padding-left: $fpm.space.space-2
 brand-data list brand:
 
 --- title-list:
