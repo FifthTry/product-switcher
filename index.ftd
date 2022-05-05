@@ -236,13 +236,12 @@ sub-title: `ftd-py` Documentation
 -- ftd.row switcher:
 boolean on-left: true
 boolean visible: false
+brand-data list brand:
 padding-horizontal: $fpm.space.space-4
 padding-vertical: $fpm.space.space-2
 color: $fpm.color.main.background.step-1
 background-color: $fpm.color.main.cta-primary.base
 border-radius: 4
-id: switcher
-brand-data list brand:
 $on-mouse-enter$: $visible = true
 align if $on-left: left
 align if not $on-left: right
