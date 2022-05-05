@@ -36,6 +36,10 @@ weight: 700
 
 -- integer var-current-brand: $current-brand
 
+-- boolean mouse-in: false
+
+-- boolean visible: false
+
 
 -- ftd.color shadow-color:
 light: rgba(45, 212, 191, 0.2)
@@ -134,7 +138,7 @@ reference-width: 400
 
 \-- switcher: 
 brand: $brand
-on-left: true 
+
 
 
 -- switcher: 
@@ -238,7 +242,6 @@ color: $fpm.color.main.background.step-1
 background-color: $fpm.color.main.cta-primary.base
 border-radius: 4
 id: switcher
-boolean visible: false
 brand-data list brand:
 $on-mouse-enter$: $visible = true
 boolean on-left: true
@@ -248,6 +251,7 @@ align if not $on-left: right
 --- ftd.row:
 
 --- brand-title: $obj.title
+logo: $obj.logo
 $loop$: $brand as $obj
 index: $obj.index
 
@@ -412,7 +416,6 @@ optional string sub-title:
 optional string button-text:
 width: fill
 min-height: 288
-boolean mouse-in: false
 border-right-radius: 8
 if: $var-current-brand == $index
 background-color: $fpm.color.main.background.step-1
@@ -454,10 +457,22 @@ cursor: pointer
 
 
 
--- ftd.text brand-title: $title
+-- ftd.row brand-title:
+height: fill
+width: fill 
 integer index:
 caption title:
+optional ftd.image-src logo: 
 if: $index == $var-current-brand
+
+--- ftd.image:
+src: $logo
+margin-right: $fpm.space.space-2
+height: 16
+width: auto
+
+
+--- ftd.text: $title
 role: $bold-small-title
 color: $fpm.color.main.background.step-1
 cursor: pointer
