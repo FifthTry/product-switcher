@@ -36,10 +36,6 @@ weight: 700
 
 -- integer var-current-brand: $current-brand
 
--- boolean mouse-in: false
-
--- boolean visible: false
-
 
 -- ftd.color shadow-color:
 light: rgba(45, 212, 191, 0.2)
@@ -143,7 +139,7 @@ brand: $brand
 
 -- switcher: 
 brand: $brand
-on-left: true 
+
 
 
 -- container: code-wrap
@@ -158,9 +154,11 @@ reference-width: 400
 brand: $brand
 on-left: false 
 
+
 -- switcher: 
 brand: $brand
 on-left: false 
+
 
 
 
@@ -236,6 +234,8 @@ sub-title: `ftd-py` Documentation
 
 
 -- ftd.row switcher:
+boolean on-left: true
+boolean visible: false
 padding-horizontal: $fpm.space.space-4
 padding-vertical: $fpm.space.space-2
 color: $fpm.color.main.background.step-1
@@ -244,7 +244,6 @@ border-radius: 4
 id: switcher
 brand-data list brand:
 $on-mouse-enter$: $visible = true
-boolean on-left: true
 align if $on-left: left
 align if not $on-left: right
 
@@ -408,6 +407,7 @@ width: fill
 
 
 -- ftd.column copy-list:
+boolean mouse-in: false
 optional string copy:
 optional ftd.color menu-hover: $fpm.color.main.text-strong
 integer index:
@@ -458,8 +458,6 @@ cursor: pointer
 
 
 -- ftd.row brand-title:
-height: fill
-width: fill 
 integer index:
 caption title:
 optional ftd.image-src logo: 
@@ -470,6 +468,7 @@ src: $logo
 margin-right: $fpm.space.space-2
 height: 16
 width: auto
+
 
 
 --- ftd.text: $title
