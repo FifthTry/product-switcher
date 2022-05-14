@@ -5,6 +5,13 @@
 -- import: fifthtry.github.io/inter/assets as font-assets
 
 
+
+-- boolean is-mobile: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+
 -- fpm.font-display: $font-assets.fonts.Inter
 
 -- ftd.font-size custom-label-type:
@@ -31,6 +38,14 @@ desktop: $fpm.type.copy-relaxed.desktop
 mobile: $fpm.type.copy-relaxed.mobile
 xl: $fpm.type.copy-relaxed.xl
 weight: 700
+
+
+-- ftd.type label-big-bold: $fpm.type.label-big.font
+desktop: $fpm.type.copy-relaxed.desktop
+mobile: $fpm.type.copy-relaxed.mobile
+xl: $fpm.type.copy-relaxed.xl
+weight: 700
+
 
 -- integer current-brand: 4
 
@@ -195,6 +210,7 @@ sub-title: Continuous Documentation
 - Initial Setup Flow
 - Self Hosted Flow
 
+
 -- brand: FTD
 index: 2
 logo: $assets.files.assets.images.ftd.png
@@ -206,6 +222,7 @@ FTD gives you a lot of power over your presentation, and yet it is quite easy to
 - FTD Is Easy To Learn
 - FTD Is Quite Powerful
 
+
 -- brand: FPM
 index: 3
 logo: $assets.files.assets.images.fpm.png
@@ -216,6 +233,7 @@ sub-title: `ftd` package manager
 
 - Distributed Package Manager
 - Translation Tracking
+
 
 -- brand: ftd-py
 index: 4
@@ -233,9 +251,35 @@ sub-title: `ftd-py` Documentation
 
 
 
+
+
 -- ftd.row switcher:
-boolean on-left: true
 boolean visible: false
+boolean on-left: true
+brand-data list brand:
+$on-mouse-enter$: $visible = true
+align if $on-left: left
+align if not $on-left: right
+
+
+--- switcher-desktop:
+if: not $is-mobile
+visible: $visible
+on-left: $on-left
+brand: $brand
+
+--- container: ftd.main
+
+--- switcher-mobile:
+if: $is-mobile
+visible: $visible
+brand: $brand
+
+
+
+-- ftd.row switcher-desktop:
+boolean on-left: 
+boolean visible: 
 brand-data list brand:
 padding-horizontal: $fpm.space.space-4
 padding-vertical: $fpm.space.space-2
@@ -245,6 +289,7 @@ border-radius: 4
 $on-mouse-enter$: $visible = true
 align if $on-left: left
 align if not $on-left: right
+
 
 --- ftd.row:
 
@@ -474,3 +519,134 @@ width: auto
 role: $bold-small-title
 color: $fpm.color.main.background.step-1
 cursor: pointer
+
+
+
+
+
+
+
+
+-- ftd.row switcher-mobile:
+boolean visible: 
+brand-data list brand:
+
+--- ftd.row: 
+width: fill
+$on-click$: $visible = true
+
+
+
+--- ftd.text: All Product ->
+role: $bold-small
+color: $fpm.color.main.cta-primary.base
+white-space: nowrap
+
+--- container:  ftd.main
+
+--- ftd.row:
+if: $visible
+anchor: window
+width: fill
+background-color: $fpm.color.main.background.step-1
+anchor: window
+top: 0
+bottom: 0
+left: 0
+right: 0
+z-index: 1000
+sticky: true
+height: calc 100vh - 0px
+width: percent 70
+align: top-left
+overflow-y: auto
+
+
+--- ftd.column:
+width: fill
+padding-vertical: 32
+padding-horizontal: 24
+
+--- ftd.text: <- back
+role: $label-big-bold
+color: $fpm.color.main.text-strong
+$on-click$: $visible = false
+padding-bottom: 24
+
+
+--- brand-name:
+copy: $obj.body
+index: $obj.index
+logo: $obj.logo
+sub-title: $obj.sub-title
+url: $obj.url
+title: $obj.title
+$loop$: $brand as $obj
+
+
+
+
+
+
+
+
+
+-- ftd.column brand-name:
+caption title:
+optional string copy:
+integer index:
+string url:
+string sub-title:
+ftd.image-src logo:
+background-color: $fpm.color.main.background.step-1
+link: $url
+padding-vertical: 8
+padding-horizontal: 8
+
+
+--- ftd.row:
+width: fill
+id: logo-container
+spacing: 4
+border-top: 1
+border-color: $fpm.color.main.text
+padding-top: 12
+
+
+--- ftd.image:
+height: 36
+width: auto
+src: $assets.files.assets.images.logo-brand.svg
+
+--- ftd.text: $title
+padding-top: $fpm.space.space-2
+role: $label-big-bold
+color: $fpm.color.main.text-strong
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+color: $fpm.color.main.text
+
+--- ftd.text: $sub-title
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
+
+--- ftd.text:
+text: $copy
+width: fill
+role: $fpm.type.copy-tight
+
+
+--- ftd.text: explore ->
+role: $fpm.type.label-small
+color: $fpm.color.main.cta-primary.base
+white-space: nowrap
+
+
+
+
+
+
+
