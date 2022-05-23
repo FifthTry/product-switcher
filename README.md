@@ -6,6 +6,6 @@ The Brand Switcher package(https://github.com/FifthTry/brand-switcher) can be us
 Basic Usage:
 
 ```ftd
--- switcher: 
+\-- switcher: 
 brand: $brand
 ```
