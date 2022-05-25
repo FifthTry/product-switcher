@@ -14,12 +14,12 @@ width: fill
 align: center
 spacing: 20
 padding-horizontal: 50
-padding-vertical: 20
+/padding-vertical: 20
 background-color: $fpm.color.main.background.base
 min-height: 3000
 height: fill
 
--- pd.package: Brand Switcher component
+-- pd.package: Product Switcher component
 name: fifthtry.github.io/switcher
 
 This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
