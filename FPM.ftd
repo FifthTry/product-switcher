@@ -1,7 +1,7 @@
 -- import: fpm
 
--- fpm.package: fifthtry.github.io/brand-switcher
-zip: github.com/fifthtry/brand-switcher/archive/refs/heads/main.zip
+-- fpm.package: fifthtry.github.io/product-switcher
+zip: github.com/fifthtry/product-switcher/archive/refs/heads/main.zip
 
 -- fpm.dependency: fifthtry.github.io/inter
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
