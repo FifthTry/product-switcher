@@ -1,11 +1,8 @@
-# Brand Switcher
-Package name: Brand Switcher URL: fifthtry.github.io/brand-switcher
+# Product Switcher
 
-The Brand Switcher package(https://github.com/FifthTry/brand-switcher) can be used to show multiple brands and it’s short description with it’s logos, on your web pages.
+Package name: Product Switcher URL: [fifthtry.github.io/product-switcher](https://fifthtry.github.io/product-switcher)
 
-Basic Usage:
+The Product Switcher package can be used to show multiple products, their short 
+description and logos.
 
-```ftd
-\-- switcher: 
-brand: $brand
-```
+[Documentation](https://fifthtry.github.io/product-switcher).

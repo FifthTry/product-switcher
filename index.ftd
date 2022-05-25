@@ -1,9 +1,133 @@
 -- import: fpm
--- import: fifthtry.github.io/brand-switcher/assets
+-- import: fifthtry.github.io/product-switcher/assets
 -- import: fifthtry.github.io/typography as tf
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/inter/assets as font-assets
 -- import: fifthtry.github.io/octicon as octicons
+
+
+
+
+-- ftd.column:
+id: code-wrap
+width: fill
+align: center
+spacing: 20
+padding-horizontal: 50
+padding-vertical: 20
+background-color: $fpm.color.main.background.base
+min-height: 3000
+height: fill
+
+-- pd.package: Brand Switcher component
+name: fifthtry.github.io/switcher
+
+This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
+
+
+
+-- pd.hidden-code: List of items
+
+\-- record product-data:
+caption title:
+body body:
+integer index:
+optional ftd.image-src logo: 
+optional string sub-title:
+optional string button-text:
+
+\-- product-data list example-product:
+
+\-- example-product: Product Name 1
+index: 1
+logo: $assets.files.assets.images.brand-logo.png
+sub-title: Optional Title 1
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- example-product: Product Name 2
+index: 2
+logo: $assets.files.assets.images.brand-logo.png
+sub-title: Optional Title 2
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- example-product: Product Name 3
+index: 3
+logo: $assets.files.assets.images.brand-logo.png
+sub-title: Optional Title 3
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+\-- example-product: Product Name 4
+index: 4
+logo: $assets.files.assets.images.brand-logo.png
+sub-title: Optional Title 4
+button-text: ACTION
+
+This is a product Description, this can go to multple lines, it can also have bullets
+
+- Something
+- Something else
+
+
+
+-- pd.output: Basic usage example - brand dropdown at on-left position
+reference: $assets.files.assets.images.switcher-demo.png
+reference-width: 400
+
+
+
+\-- switcher: 
+product: $example-product
+
+
+
+-- switcher: 
+product: $example-product
+
+
+
+-- container: code-wrap
+
+
+-- pd.output: Basic usage example - brand dropdown at right position
+reference: $assets.files.assets.images.switcher-demo.png
+reference-width: 400
+
+
+\-- switcher: 
+product: $example-product
+on-left: false 
+
+
+-- switcher: 
+product: $example-product
+on-left: false 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -- boolean is-mobile: false
@@ -80,130 +204,20 @@ light: rgba(45, 212, 191, 0.12)
 dark: rgba(45, 212, 191, 0.12)
 
 
--- ftd.column:
-id: code-wrap
-width: fill
-align: center
-spacing: 20
-padding-horizontal: 50
-padding-vertical: 20
-background-color: $fpm.color.main.background.base
-min-height: 3000
-height: fill
-
--- pd.package: Brand Switcher component
-name: fifthtry.github.io/switcher
-
-This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
-
-
-
--- pd.hidden-code: List of items
-
-\-- record brand-data:
-caption title:
-body body:
-integer index:
-optional ftd.image-src logo: 
-optional string sub-title:
-optional string button-text:
-
-\-- brand-data list brand:
-
-\-- brand: Product Name 1
-index: 1
-logo: $assets.files.assets.images.brand-logo.png
-sub-title: Optional Title 1
-button-text: ACTION
-
-This is a product Description, this can go to multple lines, it can also have bullets
-
-- Something
-- Something else
-
-\-- brand: Product Name 2
-index: 2
-logo: $assets.files.assets.images.brand-logo.png
-sub-title: Optional Title 2
-button-text: ACTION
-
-This is a product Description, this can go to multple lines, it can also have bullets
-
-- Something
-- Something else
-
-\-- brand: Product Name 3
-index: 3
-logo: $assets.files.assets.images.brand-logo.png
-sub-title: Optional Title 3
-button-text: ACTION
-
-This is a product Description, this can go to multple lines, it can also have bullets
-
-- Something
-- Something else
-
-\-- brand: Product Name 4
-index: 4
-logo: $assets.files.assets.images.brand-logo.png
-sub-title: Optional Title 4
-button-text: ACTION
-
-This is a product Description, this can go to multple lines, it can also have bullets
-
-- Something
-- Something else
-
-
-
--- pd.output: Basic usage example - brand dropdown at on-left position
-reference: $assets.files.assets.images.switcher-demo.png
-reference-width: 400
-
-
-
-\-- switcher: 
-brand: $brand
-
-
-
--- switcher: 
-brand: $brand
-
-
-
--- container: code-wrap
-
-
--- pd.output: Basic usage example - brand dropdown at right position
-reference: $assets.files.assets.images.switcher-demo.png
-reference-width: 400
-
-
-\-- switcher: 
-brand: $brand
-on-left: false 
-
-
--- switcher: 
-brand: $brand
-on-left: false 
 
 
 
 
 
 
+-- product-data list products:
 
 
 
 
 
 
-
-
-
--- record brand-data:
+-- record product-data:
 caption title:
 body body:
 integer index:
@@ -213,9 +227,9 @@ optional ftd.image-src mobile-logo:
 optional string sub-title:
 optional string button-text:
 
--- brand-data list brand:
+-- product-data list example-product:
 
--- brand: cDoc
+-- example-product: cDoc
 index: 1
 mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.doc-framework.png
@@ -228,7 +242,7 @@ sub-title: Continuous Documentation
 - Self Hosted Flow
 
 
--- brand: FTD
+-- example-product: FTD
 index: 2
 mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.ftd.png
@@ -241,7 +255,7 @@ FTD gives you a lot of power over your presentation, and yet it is quite easy to
 - FTD Is Quite Powerful
 
 
--- brand: FPM
+-- example-product: FPM
 index: 3
 mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.fpm.png
@@ -254,7 +268,7 @@ sub-title: `ftd` package manager
 - Translation Tracking
 
 
--- brand: ftd-py
+-- example-product: ftd-py
 index: 4
 mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.home.png
@@ -274,47 +288,57 @@ sub-title: `ftd-py` Documentation
 
 
 -- ftd.row switcher:
-boolean visible: false
+product-data list product: $products
+boolean mouse-events: false
 boolean on-left: true
-brand-data list brand:
-$on-mouse-enter$: $visible = true
+$on-mouse-enter$: $mouse-events = true
 align if $on-left: left
 align if not $on-left: right
-
+if: $product is not empty
 
 --- switcher-desktop:
 if: not $is-mobile
-visible: $visible
+mouse-events: $mouse-events
 on-left: $on-left
-brand: $brand
+brand: $product
 
 --- container: ftd.main
 
 --- switcher-mobile:
 if: $is-mobile
-visible: $visible
-brand: $brand
+mouse-events: $mouse-events
+brand: $product
+
+
+
+
+
+
+
+
+
+
 
 
 
 -- ftd.row switcher-desktop:
+product-data list brand:
 boolean on-left: 
-boolean visible: 
-brand-data list brand:
+boolean mouse-events: 
 padding-horizontal: $fpm.space.space-2
 padding-vertical: $fpm.space.space-2
 color: $fpm.color.main.background.step-1
 background-color: $fpm.color.main.background.step-1
 border-radius: 4
-$on-mouse-enter$: $visible = true
+$on-mouse-enter$: $mouse-events = true
 align if $on-left: left
 align if not $on-left: right
 spacing: 4
 
 
 --- brand-title: $obj.title
-logo: $obj.logo
 $loop$: $brand as $obj
+logo: $obj.logo
 index: $obj.index
 
 --- ftd.row:
@@ -326,7 +350,7 @@ color: $fpm.color.main.cta-primary.base
 --- container: ftd.main
 
 --- ftd.row:
-if: $visible
+if: $mouse-events
 anchor: parent
 width: fill
 min-width: 460
@@ -343,10 +367,10 @@ shadow-size: 0
 shadow-blur: 4
 shadow-color: $shadow-color
 z-index: 11
-$on-mouse-enter$: $visible = true
-$on-mouse-leave$: $visible = false
+$on-mouse-enter$: $mouse-events = true
+$on-mouse-leave$: $mouse-events = false
 $on-mouse-leave$: $var-current-brand = $current-brand
-$on-click-outside$: $visible = false
+$on-click-outside$: $mouse-events = false
 
 --- ftd.row:
 width: fill
@@ -380,7 +404,7 @@ brand: $brand
 
 
 -- ftd.row product-list:
-brand-data list brand:
+product-data list brand:
 
 --- title-list:
 brand: $brand
@@ -404,7 +428,7 @@ url: $obj.url
 
 
 -- ftd.column title-list:
-brand-data list brand:
+product-data list brand:
 id: title-row
 width: percent 50
 
@@ -548,12 +572,12 @@ padding-top: 4
 
 
 -- ftd.row switcher-mobile:
-boolean visible: 
-brand-data list brand:
+product-data list brand:
+boolean mouse-events: 
 
 --- ftd.row: 
 width: fill
-$on-click$: $visible = true
+$on-click$: $mouse-events = true
 
 
 
@@ -565,7 +589,7 @@ white-space: nowrap
 --- container:  ftd.main
 
 --- ftd.row:
-if: $visible
+if: $mouse-events
 anchor: window
 width: fill
 background-color: $fpm.color.main.background.step-1
@@ -590,7 +614,7 @@ padding-horizontal: 24
 --- ftd.text: <- back
 role: $label-big-bold
 color: $fpm.color.main.text-strong
-$on-click$: $visible = false
+$on-click$: $mouse-events = false
 padding-top: $fpm.space.space-1
 padding-bottom: $fpm.space.space-4
 
