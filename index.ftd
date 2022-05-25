@@ -333,7 +333,7 @@ border-radius: 4
 $on-mouse-enter$: $mouse-events = true
 align if $on-left: left
 align if not $on-left: right
-spacing: 4
+spacing: 8
 
 
 --- brand-title: $obj.title
@@ -359,7 +359,7 @@ border-radius: 8
 left if $on-left: -3
 top if $on-left: 40
 right if not $on-left: -3
-top if not $on-left: 27
+top if not $on-left: 40
 background-color: $fpm.color.main.background.base
 shadow-offset-x: 0
 shadow-offset-y: 4
