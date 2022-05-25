@@ -3,13 +3,17 @@
 -- import: fifthtry.github.io/typography as tf
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/inter/assets as font-assets
-
+-- import: fifthtry.github.io/octicon as octicons
 
 
 -- boolean is-mobile: false
 
 -- is-mobile: true
 if: $ftd.device == mobile
+
+-- ftd.color header-bg:
+light: rgba(45, 212, 143, 0.05)
+dark: rgba(45, 212, 143, 0.05)
 
 
 -- fpm.font-display: $font-assets.fonts.Inter
@@ -25,6 +29,17 @@ mobile: $custom-label-type
 xl: $custom-label-type
 weight: 700
 
+
+-- ftd.font-size label-bold-type:
+line-height: 16
+size: 16
+letter-spacing: 0
+
+-- ftd.type label-bold: $fpm.type.label-small.font
+desktop: $label-bold-type
+mobile: $label-bold-type
+xl: $label-bold-type
+weight: 700
 
 -- ftd.type bold-small-title: $fpm.type.label-small.font
 desktop: $fpm.type.label-small.desktop
@@ -194,6 +209,7 @@ body body:
 integer index:
 string url:
 optional ftd.image-src logo: 
+optional ftd.image-src mobile-logo: 
 optional string sub-title:
 optional string button-text:
 
@@ -201,6 +217,7 @@ optional string button-text:
 
 -- brand: cDoc
 index: 1
+mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.doc-framework.png
 url: https://fifthtry.github.io/cdoc-doc/
 sub-title: Continuous Documentation
@@ -213,6 +230,7 @@ sub-title: Continuous Documentation
 
 -- brand: FTD
 index: 2
+mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.ftd.png
 url: https://ftd.dev/
 sub-title: FifthTry Document
@@ -225,6 +243,7 @@ FTD gives you a lot of power over your presentation, and yet it is quite easy to
 
 -- brand: FPM
 index: 3
+mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.fpm.png
 url: https://fpm.dev/
 sub-title: `ftd` package manager
@@ -237,6 +256,7 @@ sub-title: `ftd` package manager
 
 -- brand: ftd-py
 index: 4
+mobile-logo: $assets.files.assets.images.logo-brand.svg
 logo: $assets.files.assets.images.home.png
 url: https://fifthtry.github.io/python.ftd.dev/
 sub-title: `ftd-py` Documentation
@@ -281,33 +301,34 @@ brand: $brand
 boolean on-left: 
 boolean visible: 
 brand-data list brand:
-padding-horizontal: $fpm.space.space-4
+padding-horizontal: $fpm.space.space-2
 padding-vertical: $fpm.space.space-2
 color: $fpm.color.main.background.step-1
-background-color: $fpm.color.main.cta-primary.base
+background-color: $fpm.color.main.background.step-1
 border-radius: 4
 $on-mouse-enter$: $visible = true
 align if $on-left: left
 align if not $on-left: right
+spacing: 4
 
-
---- ftd.row:
 
 --- brand-title: $obj.title
 logo: $obj.logo
 $loop$: $brand as $obj
 index: $obj.index
 
+--- ftd.row:
+padding-top: $fpm.space.space-1
 
---- ftd.image:
-src: $assets.files.assets.images.triangle-down.png
-cursor: pointer
+--- octicons.triangle-down:
+color: $fpm.color.main.cta-primary.base
+
+--- container: ftd.main
 
 --- ftd.row:
 if: $visible
 anchor: parent
 width: fill
-/height: fill
 min-width: 460
 min-height: 255
 border-radius: 8
@@ -486,7 +507,7 @@ if: $button-text is not null
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 padding-vertical: $fpm.space.space-2
-padding-horizontal: $fpm.space.space-4
+padding-horizontal: $fpm.space.space-8
 background-color: $fpm.color.main.cta-primary.base
 color: $fpm.color.main.cta-primary.text
 border-radius: 4
@@ -506,20 +527,19 @@ integer index:
 caption title:
 optional ftd.image-src logo: 
 if: $index == $var-current-brand
+spacing: 4
 
 --- ftd.image:
 src: $logo
-margin-right: $fpm.space.space-2
-height: 16
+height: 24
 width: auto
 
 
-
 --- ftd.text: $title
-role: $bold-small-title
-color: $fpm.color.main.background.step-1
+role: $label-bold
+color: $fpm.color.main.text-strong
 cursor: pointer
-
+padding-top: 4
 
 
 
@@ -557,27 +577,28 @@ right: 0
 z-index: 1000
 sticky: true
 height: calc 100vh - 0px
-width: percent 70
+width: calc 100% - 48px
 align: top-left
 overflow-y: auto
 
 
 --- ftd.column:
 width: fill
-padding-vertical: 32
+padding-top: $fpm.space.space-7
 padding-horizontal: 24
 
 --- ftd.text: <- back
 role: $label-big-bold
 color: $fpm.color.main.text-strong
 $on-click$: $visible = false
-padding-bottom: 24
+padding-top: $fpm.space.space-1
+padding-bottom: $fpm.space.space-4
 
 
 --- brand-name:
 copy: $obj.body
 index: $obj.index
-logo: $obj.logo
+logo: $obj.mobile-logo
 sub-title: $obj.sub-title
 url: $obj.url
 title: $obj.title
@@ -598,10 +619,10 @@ integer index:
 string url:
 string sub-title:
 ftd.image-src logo:
-background-color: $fpm.color.main.background.step-1
+width: fill
 link: $url
-padding-vertical: 8
-padding-horizontal: 8
+background-color: $fpm.color.main.background.step-1
+padding-top: $fpm.space.space-3
 
 
 --- ftd.row:
@@ -609,18 +630,18 @@ width: fill
 id: logo-container
 spacing: 4
 border-top: 1
-border-color: $fpm.color.main.text
-padding-top: 12
+border-color: $fpm.color.main.border
+padding-vertical: $fpm.space.space-2
 
 
 --- ftd.image:
 height: 36
 width: auto
-src: $assets.files.assets.images.logo-brand.svg
+src: $logo
 
 --- ftd.text: $title
-padding-top: $fpm.space.space-2
-role: $label-big-bold
+padding-top: $fpm.space.space-3
+role: $label-bold
 color: $fpm.color.main.text-strong
 
 --- container: ftd.main

@@ -6,3 +6,4 @@ zip: github.com/fifthtry/brand-switcher/archive/refs/heads/main.zip
 -- fpm.dependency: fifthtry.github.io/inter
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
 -- fpm.dependency: fifthtry.github.io/typography as tf
+-- fpm.dependency: fifthtry.github.io/octicon 
