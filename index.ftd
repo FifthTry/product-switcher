@@ -186,9 +186,9 @@ xl: $fpm.type.copy-relaxed.xl
 weight: 700
 
 
--- integer current-brand: 4
+-- integer current-product: 1
 
--- integer var-current-brand: $current-brand
+-- integer var-current-product: $current-product
 
 
 -- ftd.color shadow-color:
@@ -356,9 +356,9 @@ width: fill
 min-width: 460
 min-height: 255
 border-radius: 8
-left if $on-left: -16
-top if $on-left: 27
-right if not $on-left: -16
+left if $on-left: -3
+top if $on-left: 40
+right if not $on-left: -3
 top if not $on-left: 27
 background-color: $fpm.color.main.background.base
 shadow-offset-x: 0
@@ -369,7 +369,7 @@ shadow-color: $shadow-color
 z-index: 11
 $on-mouse-enter$: $mouse-events = true
 $on-mouse-leave$: $mouse-events = false
-$on-mouse-leave$: $var-current-brand = $current-brand
+$on-mouse-leave$: $var-current-product = $current-product
 $on-click-outside$: $mouse-events = false
 
 --- ftd.row:
@@ -451,7 +451,7 @@ caption title:
 integer index:
 optional ftd.image-src logo:
 string url:
-$on-mouse-enter$: $var-current-brand = $index
+$on-mouse-enter$: $var-current-product = $index
 background-color: $fpm.color.main.background.base
 width: fill
 
@@ -462,10 +462,10 @@ padding-horizontal: $fpm.space.space-4
 padding-right: $fpm.space.space-6
 padding-bottom: $fpm.space.space-6
 background-color: $fpm.color.main.background.base
-background-color if $var-current-brand == $index: $fpm.color.main.background.step-1
+background-color if $var-current-product == $index: $fpm.color.main.background.step-1
 border-left-radius: 4
 color: $fpm.color.main.text
-color if $var-current-brand == $index: $fpm.color.main.text-strong
+color if $var-current-product == $index: $fpm.color.main.text-strong
 link: $url
 
 /--- ftd.row:
@@ -506,7 +506,7 @@ optional string button-text:
 width: fill
 min-height: 288
 border-right-radius: 8
-if: $var-current-brand == $index
+if: $var-current-product == $index
 background-color: $fpm.color.main.background.step-1
 link: $url
 
@@ -550,7 +550,7 @@ cursor: pointer
 integer index:
 caption title:
 optional ftd.image-src logo: 
-if: $index == $var-current-brand
+if: $index == $var-current-product
 spacing: 4
 
 --- ftd.image:
