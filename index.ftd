@@ -91,12 +91,12 @@ reference-width: 400
 
 
 \-- switcher: 
-product: $example-product
+products: $example-product
 
 
 
 -- switcher: 
-product: $example-product
+products: $example-product
 
 
 
@@ -109,12 +109,12 @@ reference-width: 400
 
 
 \-- switcher: 
-product: $example-product
+products: $example-product
 on-left: false 
 
 
 -- switcher: 
-product: $example-product
+products: $example-product
 on-left: false 
 
 
@@ -210,7 +210,7 @@ dark: rgba(45, 212, 191, 0.12)
 
 
 
--- product-data list products:
+-- product-data list product:
 
 
 
@@ -288,26 +288,26 @@ sub-title: `ftd-py` Documentation
 
 
 -- ftd.row switcher:
-product-data list product: $products
+product-data list products: $product
 boolean mouse-events: false
 boolean on-left: true
 $on-mouse-enter$: $mouse-events = true
 align if $on-left: left
 align if not $on-left: right
-if: $product is not empty
+if: $products is not empty
 
 --- switcher-desktop:
 if: not $is-mobile
 mouse-events: $mouse-events
 on-left: $on-left
-brand: $product
+brand: $products
 
 --- container: ftd.main
 
 --- switcher-mobile:
 if: $is-mobile
 mouse-events: $mouse-events
-brand: $product
+brand: $products
 
 
 
