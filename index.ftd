@@ -14,7 +14,7 @@ width: fill
 align: center
 spacing: 20
 padding-horizontal: 50
-/padding-vertical: 20
+padding-vertical: 20
 background-color: $fpm.color.main.background.base
 min-height: 3000
 height: fill
