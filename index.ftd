@@ -3,7 +3,6 @@
 -- import: fifthtry.github.io/typography as tf
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/inter/assets as font-assets
--- import: fifthtry.github.io/octicon as octicons
 -- import: fifthtry.github.io/package-doc/code-block as cb
 
 
@@ -354,10 +353,14 @@ logo: $obj.logo
 index: $obj.index
 
 --- ftd.row:
-padding-top: $fpm.space.space-1
+padding-top: 10
 
---- octicons.triangle-down:
-color: $fpm.color.main.cta-primary.base
+
+--- ftd.image: 
+src: $assets.files.assets.images.down-arrow.svg
+height: auto
+width: 12
+
 
 --- container: ftd.main
 
