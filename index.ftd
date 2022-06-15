@@ -4,6 +4,7 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/inter/assets as font-assets
 -- import: fifthtry.github.io/octicon as octicons
+-- import: fifthtry.github.io/package-doc/code-block as cb
 
 
 
@@ -12,7 +13,6 @@
 id: code-wrap
 width: fill
 align: center
-spacing: 20
 padding-horizontal: 50
 padding-vertical: 20
 background-color: $fpm.color.main.background.base
@@ -23,6 +23,18 @@ height: fill
 name: fifthtry.github.io/switcher
 
 This package can be used to show multiple brands and it's short description with it's logos, on your web pages.
+
+How to use?
+
+Add below lines into `FPM.ftd` file:
+
+
+-- cb.code:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/switcher as switcher
+
+\-- fpm.auto-import: switcher
 
 
 
