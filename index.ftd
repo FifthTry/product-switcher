@@ -595,7 +595,7 @@ color: $fpm.color.main.text
 padding-vertical: $fpm.space.space-2
 padding-horizontal: $fpm.space.space-8
 background-color: $fpm.color.main.cta-primary.base
-color: $fpm.color.main.cta-primary.text
+;color: $fpm.color.main.cta-primary.text
 border-radius: 4
 cursor: pointer
 
@@ -659,7 +659,6 @@ if: $mouse-events
 anchor: window
 width: fill
 background-color: $bg-color
-anchor: window
 top: 0
 bottom: 0
 left: 0
@@ -667,7 +666,7 @@ right: 0
 z-index: 1000
 sticky: true
 height: calc 100vh - 0px
-width: calc 100% - 48px
+;width: calc 100% - 48px
 align: top-left
 overflow-y: auto
 
