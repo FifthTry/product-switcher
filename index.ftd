@@ -299,6 +299,11 @@ sub-title: `ftd-py` Documentation
 
 
 -- ftd.row switcher:
+ftd.color bg-color: $fpm.color.main.background.step-1
+ftd.color text-color: $fpm.color.main.text-strong
+ftd.color bg-hover: $fpm.color.main.background.base
+ftd.color body-text-color: $fpm.color.main.text
+ftd.color shadow-color: $shadow-color
 product-data list products: $product
 boolean mouse-events: false
 boolean on-left: true
@@ -312,6 +317,11 @@ if: not $is-mobile
 mouse-events: $mouse-events
 on-left: $on-left
 brand: $products
+bg-color: $bg-color
+text-color: $text-color
+bg-hover: $bg-hover
+body-text-color: $body-text-color
+shadow-color: $shadow-color
 
 --- container: ftd.main
 
@@ -319,8 +329,9 @@ brand: $products
 if: $is-mobile
 mouse-events: $mouse-events
 brand: $products
-
-
+bg-color: $bg-color
+text-color: $text-color
+body-text-color: $body-text-color
 
 
 
@@ -338,8 +349,13 @@ boolean on-left:
 boolean mouse-events: 
 padding-horizontal: $fpm.space.space-2
 padding-vertical: $fpm.space.space-2
-color: $fpm.color.main.background.step-1
-background-color: $fpm.color.main.background.step-1
+optional ftd.color bg-color:
+optional ftd.color text-color:
+optional ftd.color bg-hover:
+ftd.color body-text-color:
+color: $text-color
+background-color: $bg-color
+ftd.color shadow-color: 
 border-radius: 4
 $on-mouse-enter$: $mouse-events = true
 align if $on-left: left
@@ -351,6 +367,8 @@ spacing: 8
 $loop$: $brand as $obj
 logo: $obj.logo
 index: $obj.index
+text-color: $text-color
+
 
 --- ftd.row:
 padding-top: 10
@@ -375,7 +393,7 @@ left if $on-left: -3
 top if $on-left: 40
 right if not $on-left: -3
 top if not $on-left: 40
-background-color: $fpm.color.main.background.base
+background-color: $bg-hover
 shadow-offset-x: 0
 shadow-offset-y: 4
 shadow-size: 0
@@ -410,6 +428,10 @@ shadow-color: $shadow-color-right
 
 --- product-list:
 brand: $brand
+text-color: $text-color
+bg-color: $bg-color
+bg-hover: $bg-hover
+body-text-color: $body-text-color
 
 
 
@@ -420,9 +442,17 @@ brand: $brand
 
 -- ftd.row product-list:
 product-data list brand:
+ftd.color text-color:
+ftd.color bg-color:
+ftd.color bg-hover:
+ftd.color body-text-color:
 
 --- title-list:
 brand: $brand
+text-color: $text-color
+bg-hover: $bg-hover
+bg-color: $bg-color
+body-text-color: $body-text-color
 
 --- copy-list:
 $loop$: $brand as $obj
@@ -432,6 +462,9 @@ logo: $obj.logo
 sub-title: $obj.sub-title
 button-text: $obj.button-text
 url: $obj.url
+text-color: $text-color
+body-text-color: $body-text-color
+bg-color: $bg-color
 
 
 
@@ -444,6 +477,10 @@ url: $obj.url
 
 -- ftd.column title-list:
 product-data list brand:
+ftd.color text-color:
+ftd.color bg-color:
+ftd.color bg-hover:
+ftd.color body-text-color:
 id: title-row
 width: percent 50
 
@@ -452,7 +489,10 @@ $loop$: $brand as $obj
 index: $obj.index
 logo: $obj.logo
 url: $obj.url
-
+text-color: $text-color
+bg-color: $bg-color
+bg-hover: $bg-hover
+body-text-color: $body-text-color
 
 
 
@@ -464,10 +504,14 @@ url: $obj.url
 -- ftd.row title-image:
 caption title:
 integer index:
+ftd.color bg-hover:
 optional ftd.image-src logo:
 string url:
+ftd.color text-color:
+ftd.color bg-color:
+ftd.color body-text-color:
 $on-mouse-enter$: $var-current-product = $index
-background-color: $fpm.color.main.background.base
+background-color: $bg-hover
 width: fill
 
 --- ftd.row:
@@ -476,10 +520,10 @@ padding-vertical: $fpm.space.space-4
 padding-horizontal: $fpm.space.space-4
 padding-right: $fpm.space.space-6
 padding-bottom: $fpm.space.space-6
-background-color: $fpm.color.main.background.base
-background-color if $var-current-product == $index: $fpm.color.main.background.step-1
+background-color: $bg-hover
+background-color if $var-current-product == $index: $bg-color
 border-left-radius: 4
-color: $fpm.color.main.text
+color: $body-text-color
 color if $var-current-product == $index: $fpm.color.main.text-strong
 link: $url
 
@@ -515,6 +559,9 @@ boolean mouse-in: false
 optional string copy:
 optional ftd.color menu-hover: $fpm.color.main.text-strong
 integer index:
+ftd.color text-color:
+ftd.color bg-color:
+ftd.color body-text-color:
 string url:
 optional string sub-title:
 optional string button-text:
@@ -522,7 +569,7 @@ width: fill
 min-height: 288
 border-right-radius: 8
 if: $var-current-product == $index
-background-color: $fpm.color.main.background.step-1
+background-color: $bg-color
 link: $url
 
 --- ftd.row:
@@ -535,7 +582,7 @@ padding-horizontal: $fpm.space.space-4
 
 --- ftd.text: $sub-title
 role: $copy-relaxed-bold
-color: $fpm.color.main.text-strong
+color: $text-color
 
 --- ftd.text: $copy
 role: $fpm.type.copy-relaxed
@@ -564,6 +611,7 @@ cursor: pointer
 -- ftd.row brand-title:
 integer index:
 caption title:
+ftd.color text-color:
 optional ftd.image-src logo: 
 if: $index == $var-current-product
 spacing: 4
@@ -576,7 +624,7 @@ width: auto
 
 --- ftd.text: $title
 role: $label-bold
-color: $fpm.color.main.text-strong
+color: $text-color
 cursor: pointer
 padding-top: 4
 
@@ -589,6 +637,9 @@ padding-top: 4
 -- ftd.row switcher-mobile:
 product-data list brand:
 boolean mouse-events: 
+optional ftd.color bg-color:
+optional ftd.color text-color:
+ftd.color body-text-color:
 
 --- ftd.row: 
 width: fill
@@ -607,7 +658,7 @@ white-space: nowrap
 if: $mouse-events
 anchor: window
 width: fill
-background-color: $fpm.color.main.background.step-1
+background-color: $bg-color
 anchor: window
 top: 0
 bottom: 0
@@ -628,7 +679,7 @@ padding-horizontal: 24
 
 --- ftd.text: <- back
 role: $label-big-bold
-color: $fpm.color.main.text-strong
+color: $text-color
 $on-click$: $mouse-events = false
 padding-top: $fpm.space.space-1
 padding-bottom: $fpm.space.space-4
@@ -642,8 +693,9 @@ sub-title: $obj.sub-title
 url: $obj.url
 title: $obj.title
 $loop$: $brand as $obj
-
-
+text-color: $text-color
+bg-color: $bg-color
+body-text-color: $body-text-color
 
 
 
@@ -655,12 +707,15 @@ $loop$: $brand as $obj
 caption title:
 optional string copy:
 integer index:
+optional ftd.color text-color:
+optional ftd.color bg-color:
+background-color: $bg-color
 string url:
 string sub-title:
 ftd.image-src logo:
+ftd.color body-text-color:
 width: fill
 link: $url
-background-color: $fpm.color.main.background.step-1
 padding-top: $fpm.space.space-3
 
 
@@ -681,23 +736,22 @@ src: $logo
 --- ftd.text: $title
 padding-top: $fpm.space.space-3
 role: $label-bold
-color: $fpm.color.main.text-strong
+color: $text-color
 
 --- container: ftd.main
 
 --- ftd.column:
 width: fill
-color: $fpm.color.main.text
 
 --- ftd.text: $sub-title
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
+color: $text-color
 
 --- ftd.text:
 text: $copy
 width: fill
 role: $fpm.type.copy-tight
-
+color: $body-text-color
 
 --- ftd.text: explore ->
 role: $fpm.type.label-small
