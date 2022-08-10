@@ -591,7 +591,6 @@ color: $fpm.color.main.text
 --- ftd.text: $button-text
 if: $button-text is not null
 role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text
 padding-vertical: $fpm.space.space-2
 padding-horizontal: $fpm.space.space-8
 background-color: $fpm.color.main.cta-primary.base
@@ -657,9 +656,7 @@ white-space: nowrap
 --- ftd.row:
 if: $mouse-events
 anchor: window
-width: fill
 background-color: $bg-color
-anchor: window
 top: 0
 bottom: 0
 left: 0
