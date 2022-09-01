@@ -2,7 +2,7 @@
 
 -- fpm.package: fifthtry.github.io/product-switcher
 zip: github.com/fifthtry/product-switcher/archive/refs/heads/main.zip
-base: https://raw.githubusercontent.com/fifthtry/product-switcher/main
+download-base-url: https://raw.githubusercontent.com/fifthtry/product-switcher/main
 
 -- fpm.dependency: fifthtry.github.io/inter
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
