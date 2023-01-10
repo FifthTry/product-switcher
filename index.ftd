@@ -73,9 +73,9 @@ xl: $inherited.types.copy-relaxed.xl
 weight: 700
 
 
--- integer current-product: 1
+-- integer $current-product: 1
 
--- integer $var-current-product: 1
+-- integer $var-current-product: *$current-product
 
 
 -- ftd.color shadow-color:
@@ -243,7 +243,6 @@ spacing.px: 8
 
 -- brand-title: $obj.title
 $loop$: $switcher-desktop.brand as $obj
-logo: $obj.logo
 index: $obj.index
 text-color: $switcher-desktop.text-color
 
@@ -503,13 +502,13 @@ color: $inherited.colors.text
 integer index:
 caption title:
 ftd.color text-color:
-optional ftd.image-src logo: 
+;; ftd.image-src logo: 
 
 -- ftd.row:
 if: {brand-title.index == current-product}
 spacing.px: 4
 
--- ftd.image:
+/-- ftd.image:
 src: $brand-title.logo
 height.fixed.px: 24
 width: hug-content
