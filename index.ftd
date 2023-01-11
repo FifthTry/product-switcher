@@ -277,7 +277,7 @@ background.solid: $switcher-desktop.bg-hover
 ;;shadow-size: 0
 ;;shadow-blur: 4
 ;;shadow-color: $switcher-desktop.shadow-color
-z-index: 999
+;; z-index: 999 -- TODO FTD 0.3
 $on-mouse-enter$: $set($value=$switcher-desktop.mouse-events,v=true)
 $on-mouse-leave$: $set($value=$switcher-desktop.mouse-events,v=false)
 ;;$on-mouse-leave$: $var-current-product = $current-product
@@ -329,7 +329,7 @@ ftd.color body-text-color:
 
 -- ftd.row:
 width: fill-container
-z-index: 1
+;; z-index: 1 -- TODO FTD 0.3
 
 -- title-list:
 brand: $product-list.brand
