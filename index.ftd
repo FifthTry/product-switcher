@@ -80,7 +80,7 @@ boolean $mouse-events: false
 boolean $on-left: true
 
 -- ftd.column:
-$on-mouse-enter$: $set($value=$switcher.mouse-events, v = true)
+$on-mouse-enter$: $ftd.set-bool($a = $switcher-desktop.mouse-events, v = true)
 align-content if { switcher.on-left }: left
 align-content if { !switcher.on-left }: right
 if:{!is_empty(switcher.products)}
@@ -136,7 +136,7 @@ background.solid: $switcher-desktop.bg-color
 border-radius.px: 4
 padding-horizontal.px: 8
 padding-vertical.px: 8
-$on-mouse-enter$: $set($value=$switcher-desktop.mouse-events,v=true)
+$on-mouse-enter$: $ftd.set-bool($a = $switcher-desktop.mouse-events, v = true)
 align-content if {switcher-desktop.on-left}: left
 align-content if {!switcher-desktop.on-left}: right
 spacing.px: 8
@@ -177,10 +177,10 @@ background.solid: $switcher-desktop.bg-hover
 ;;shadow-blur: 4
 ;;shadow-color: $switcher-desktop.shadow-color
 ;; z-index: 999 -- TODO FTD 0.3
-$on-mouse-enter$: $set($value=$switcher-desktop.mouse-events,v=true)
-$on-mouse-leave$: $set($value=$switcher-desktop.mouse-events,v=false)
+$on-mouse-enter$: $ftd.set-bool($a = $switcher-desktop.mouse-events, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $switcher-desktop.mouse-events, v = false)
 ;;$on-mouse-leave$: $var-current-product = $current-product
-;;$on-click-outside$: $switcher-desktop.mouse-events = false
+$on-click-outside$:  $ftd.set-bool($a = $switcher-desktop.mouse-events, v = false)
 
 -- ftd.row:
 width: fill-container
@@ -308,7 +308,7 @@ ftd.color bg-color:
 ftd.color body-text-color:
 
 -- ftd.row:
-$on-mouse-enter$: $setdata($value=$var-current-product ,v= $title-image.index)
+$on-mouse-enter$: $ftd.set-integer($a = $var-current-product, v = $title-image.index)
 background.solid: $title-image.bg-hover
 width: fill-container
 
@@ -518,7 +518,8 @@ width: fill-container
 
 -- ftd.row:
 width: fill-container
-$on-click$: $toggle($value= $switcher-mobile.mouse-events)
+$on-click$: $ftd.toggle($a = $switcher-mobile.mouse-events)
+
 
 -- ftd.text: All Product ->
 role: $inherited.types.copy-relaxed
@@ -550,7 +551,7 @@ padding-horizontal.px: 24
 -- ftd.text: <- back
 role: $inherited.types.copy-relaxed
 color: $switcher-mobile.text-color
-$on-click$: $toggle($value= $switcher-mobile.mouse-events)
+$on-click$: $ftd.toggle($a = $switcher-mobile.mouse-events)
 padding-top.px: 4
 padding-bottom.px: 16
 
