@@ -80,7 +80,7 @@ boolean $mouse-events: false
 boolean $on-left: true
 
 -- ftd.column:
-$on-mouse-enter$: $ftd.set-bool($a = $switcher-desktop.mouse-events, v = true)
+$on-mouse-enter$: $ftd.set-bool($a = $switcher.mouse-events, v = true)
 align-content if { switcher.on-left }: left
 align-content if { !switcher.on-left }: right
 if:{!is_empty(switcher.products)}
