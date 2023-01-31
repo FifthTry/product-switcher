@@ -1,0 +1,8 @@
+-- import: fastn
+
+-- fastn.package: fifthtry.github.io/product-switcher
+download-base-url: https://raw.githubusercontent.com/fifthtry/product-switcher/main
+
+-- fastn.dependency: fifthtry.github.io/package-doc as pd
+-- fastn.dependency: fifthtry.github.io/typography as tf
+ 
