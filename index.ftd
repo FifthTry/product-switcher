@@ -331,7 +331,7 @@ width.fixed.px: 32
 height.fixed.px: 32
 
 -- ftd.text: $title-image.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 white-space: nowrap
 width: fill-container
 color: $inherited.colors.text-strong
@@ -380,11 +380,11 @@ padding-horizontal.px:16
 -- ftd.column:
 
 -- ftd.text: $copy-list.sub-title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $copy-list.text-color
 
 -- ftd.text: $copy-list.copy
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -420,7 +420,7 @@ height.fixed.px: 24
 width: hug-content
 
 -- ftd.text: $brand-title.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $brand-title.text-color
 cursor: pointer
 padding-top.px: 4
@@ -468,7 +468,7 @@ src: $brand-name.logo
 
 -- ftd.text: $brand-name.title
 padding-top.px: 12
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $brand-name.text-color
 
 -- end: ftd.row
@@ -477,13 +477,13 @@ color: $brand-name.text-color
 width: fill-container
 
 -- ftd.text: $brand-name.sub-title
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $brand-name.text-color
 
 -- ftd.text:
 text: $brand-name.copy
 width: fill-container
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $brand-name.body-text-color
 
 -- ftd.text: explore ->
@@ -522,7 +522,7 @@ $on-click$: $ftd.toggle($a = $switcher-mobile.mouse-events)
 
 
 -- ftd.text: All Product ->
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.cta-primary.base
 white-space: nowrap
 
@@ -549,7 +549,7 @@ padding-top.px: 32
 padding-horizontal.px: 24
 
 -- ftd.text: <- back
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $switcher-mobile.text-color
 $on-click$: $ftd.toggle($a = $switcher-mobile.mouse-events)
 padding-top.px: 4
