@@ -1,4 +1,4 @@
--- import: fpm
+-- import: fastn
 -- import: fifthtry.github.io/product-switcher/assets
 ;;-- import: fifthtry.github.io/typography as tf
 ;;-- import: fifthtry.github.io/package-doc/doc as pd
@@ -624,14 +624,14 @@ FTD gives you a lot of power over your presentation, and yet it is quite easy to
 - FTD Is Quite Powerful
 
 
--- product-data: FPM
+-- product-data: FASTN
 index: 3
 mobile-logo: $assets.files.assets.images.logo-brand.svg
-logo: $assets.files.assets.images.fpm.png
-url: https://fpm.dev/
+logo: $assets.files.assets.images.fastn.png
+url: https://fastn.dev/
 sub-title: `ftd` package manager
 
-`fpm` is `ftd package manager`, defines a package format for packaging `ftd` files.
+`fastn` is `ftd package manager`, defines a package format for packaging `ftd` files.
 
 - Distributed Package Manager
 - Translation Tracking
@@ -644,9 +644,9 @@ logo: $assets.files.assets.images.home.png
 url: https://fifthtry.github.io/python.ftd.dev/
 sub-title: `ftd-py` Documentation
 
-`ftd-py`: Python Package for Working With FTD/FPM
+`ftd-py`: Python Package for Working With FTD/FASTN
 
-- Python Package for Working With `FTD/FPM`
+- Python Package for Working With `FTD/FASTN`
 - `ftd_django` is a Python package
 
 -- end: example-product
