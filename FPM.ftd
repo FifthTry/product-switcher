@@ -1,8 +1,0 @@
--- import: fpm
-
--- fpm.package: fifthtry.github.io/product-switcher
-download-base-url: https://raw.githubusercontent.com/fifthtry/product-switcher/main
-
--- fpm.dependency: fifthtry.github.io/package-doc as pd
--- fpm.dependency: fifthtry.github.io/typography as tf
- 
