@@ -1,9 +1,5 @@
 -- import: fastn
 -- import: fifthtry.github.io/product-switcher/assets
-;;-- import: fifthtry.github.io/typography as tf
-;;-- import: fifthtry.github.io/package-doc/doc as pd
-;;-- import: fifthtry.github.io/inter/assets as font-assets
-;;-- import: fifthtry.github.io/package-doc/code-block as cb
 
 
 -- integer $current-product: 1
@@ -81,12 +77,13 @@ boolean $on-left: true
 
 -- ftd.column:
 $on-mouse-enter$: $ftd.set-bool($a = $switcher.mouse-events, v = true)
-align-content if { switcher.on-left }: left
+align-content: left
 align-content if { !switcher.on-left }: right
-if:{!ftd.is_empty(switcher.products)}
+if:{ !ftd.is_empty(switcher.products) }
+
+-- ftd.desktop:
 
 -- switcher-desktop:
-if: { ftd.device != "mobile" }
 $mouse-events: $switcher.mouse-events
 on-left: $switcher.on-left
 brand: $switcher.products
@@ -96,13 +93,19 @@ bg-hover: $switcher.bg-hover
 body-text-color: $switcher.body-text-color
 shadow-color: $switcher.shadow-color
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- switcher-mobile:
-if: { ftd.device == "mobile" }
 $mouse-events: $switcher.mouse-events
 brand: $switcher.products
 bg-color: $switcher.bg-color
 text-color: $switcher.text-color
 body-text-color: $switcher.body-text-color
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
