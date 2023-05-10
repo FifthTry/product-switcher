@@ -13,120 +13,41 @@
 
 
 
--- site-doc.doc-home: Product Switcher Documentation
+-- site-doc.doc-home: Product Switcher
 github-url: https://fifthtry.github.io/product-switcher
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
 current-package: fifthtry.github.io/product-switcher
+show-tabs: false
+
+-- site-doc.header: What is a Product Switcher?
+
+A product switcher is a user interface element that allows users to quickly
+switch between different products or product categories within a software
+application or website. It is typically displayed as a dropdown menu or a set
+of tabs that enable users to easily navigate between different products or
+product lines.
+
+In a software application, a product switcher can be used to allow users to
+switch between different versions of the software, or between different modules
+or features within the application.
+
+-- site-doc.header: How to install fastn?
+
+Please, [click here](https://fastn.io/install/) to read fastn installation
+documentation.
 
 
--- site-doc.output:
+-- site-doc.header: How to use `product-switcher`?
 
--- switcher: 
-products: $example-product
+To use `product-switcher` add below lines into your FASTN.ftd file:
 
--- end: site-doc.output
-
--- site-doc.component-doc: `Product Switcher`
-package-link: https://fifthtry.github.io/product-switcher
-github-link: https://github.com/FifthTry/product-switcher
-package-name: fifthtry.github.io/product-switcher
-info: `-- switcher` can be used as product switcher on your fastn web projects.
-
-The `product switcher` package(fifthtry.github.io/product-switcher). Use inside `FASTN` files
-for your web pages.
+To learn more about product-switcher [click here](/docs/).
 
 -- cb.code:
 lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/product-switcher
-\-- fastn.auto-import: fifthtry.github.io/product-switcher 
-as ps 		
-
--- site-doc.header: Invocation:
-
--- cb.code:
-lang: ftd
-
-\-- product-data list example-product:
-
-\-- product-data: cDoc
-index: 1
-mobile-logo: $assets.files.assets.images.logo-brand.svg
-logo: $assets.files.assets.images.doc-framework.png
-url: https://fifthtry.github.io/cdoc-doc/
-sub-title: Continuous Documentation
-
-`cdoc` is an open source web application that integrates with Github and works like continuous integration.
-
-- Initial Setup Flow
-- Self Hosted Flow
-
-
-\-- product-data: FTD
-index: 2
-mobile-logo: $assets.files.assets.images.logo-brand.svg
-logo: $assets.files.assets.images.ftd.png
-url: https://ftd.dev/
-sub-title: FifthTry Document
-
-FTD gives you a lot of power over your presentation, and yet it is quite easy to learn.
-
-- FTD Is Easy To Learn
-- FTD Is Quite Powerful
-
-
-\-- product-data: FASTN
-index: 3
-mobile-logo: $assets.files.assets.images.logo-brand.svg
-logo: $assets.files.assets.images.fastn.png
-url: https://fastn.dev/
-sub-title: `ftd` package manager
-
-`fastn` is `ftd package manager`, defines a package format for packaging `ftd` files.
-
-- Distributed Package Manager
-- Translation Tracking
-
-
-\-- product-data: ftd-py
-index: 4
-mobile-logo: $assets.files.assets.images.logo-brand.svg
-logo: $assets.files.assets.images.home.png
-url: https://fifthtry.github.io/python.ftd.dev/
-sub-title: `ftd-py` Documentation
-
-`ftd-py`: Python Package for Working With FTD/FASTN
-
-- Python Package for Working With `FTD/FASTN`
-- `ftd_django` is a Python package
-
-\-- end: example-product
-
-
-
-
-\-- ps.switcher: 
-products: $example-product
-
--- site-doc.header: Properties:
-
-Below are details of all properties of this component.
-
--- site-doc.component-property: `products`
-
-Its used to pass `products` record list 
-to `switcher` component.
-
--- site-doc.property-header:
-
--- site-doc.table-of-property: `products`
-type: Record
-default: Default
-
--- end: site-doc.property-header
-
--- end: site-doc.component-doc
 
 -- end: site-doc.doc-home
 
