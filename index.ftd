@@ -1,60 +1,135 @@
 -- import: fastn
 -- import: fifthtry.github.io/product-switcher/assets
-
-
--- integer $current-product: 1
-
--- integer $var-current-product: *$current-product
-
--- ftd.color header-bg:
-light: rgba(45, 212, 143, 0.05)
-dark: rgba(45, 212, 143, 0.05)
-
--- ftd.color shadow-color:
-light: rgba(45, 212, 191, 0.2)
-dark: rgba(45, 212, 191, 0.2)
-
--- ftd.color shadow-color-right:
-light: rgba(45, 212, 191, 0.14)
-dark: rgba(45, 212, 191, 0.2)
-
--- ftd.color shadow-color-left:
-light: rgba(45, 212, 191, 0.12)
-dark: rgba(45, 212, 191, 0.12)
+-- import: fastn-community.github.io/site-doc
+-- import: fifthtry.github.io/code-block as cb
 
 
 
-;; Below are functions::
-
--- void toggle(value):
-boolean $value:
-
-value = !value;
-
--- void set(value,v):
-boolean $value:
-boolean v:
-
-value = v
 
 
--- void data(value,v):
-integer value:
-integer v:
-
-value = v
 
 
--- void setdata(value,v):
-integer $value:
-integer v:
-
-value = v
 
 
+
+
+-- site-doc.doc-home: Product Switcher Documentation
+github-url: https://fifthtry.github.io/product-switcher
+color-scheme: \$ftd.default-colors
+typography: \$ftd.default-types
+current-package: fifthtry.github.io/product-switcher
+
+
+-- site-doc.output:
 
 -- switcher: 
 products: $example-product
+
+-- end: site-doc.output
+
+-- site-doc.component-doc: `Product Switcher`
+package-link: https://fifthtry.github.io/product-switcher
+github-link: https://github.com/FifthTry/product-switcher
+package-name: fifthtry.github.io/product-switcher
+info: `-- switcher` can be used as product switcher on your fastn web projects.
+
+The `product switcher` package(fifthtry.github.io/product-switcher). Use inside `FASTN` files
+for your web pages.
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/product-switcher
+\-- fastn.auto-import: fifthtry.github.io/product-switcher 
+as ps 		
+
+-- site-doc.header: Invocation:
+
+-- cb.code:
+lang: ftd
+
+\-- product-data list example-product:
+
+\-- product-data: cDoc
+index: 1
+mobile-logo: $assets.files.assets.images.logo-brand.svg
+logo: $assets.files.assets.images.doc-framework.png
+url: https://fifthtry.github.io/cdoc-doc/
+sub-title: Continuous Documentation
+
+`cdoc` is an open source web application that integrates with Github and works like continuous integration.
+
+- Initial Setup Flow
+- Self Hosted Flow
+
+
+\-- product-data: FTD
+index: 2
+mobile-logo: $assets.files.assets.images.logo-brand.svg
+logo: $assets.files.assets.images.ftd.png
+url: https://ftd.dev/
+sub-title: FifthTry Document
+
+FTD gives you a lot of power over your presentation, and yet it is quite easy to learn.
+
+- FTD Is Easy To Learn
+- FTD Is Quite Powerful
+
+
+\-- product-data: FASTN
+index: 3
+mobile-logo: $assets.files.assets.images.logo-brand.svg
+logo: $assets.files.assets.images.fastn.png
+url: https://fastn.dev/
+sub-title: `ftd` package manager
+
+`fastn` is `ftd package manager`, defines a package format for packaging `ftd` files.
+
+- Distributed Package Manager
+- Translation Tracking
+
+
+\-- product-data: ftd-py
+index: 4
+mobile-logo: $assets.files.assets.images.logo-brand.svg
+logo: $assets.files.assets.images.home.png
+url: https://fifthtry.github.io/python.ftd.dev/
+sub-title: `ftd-py` Documentation
+
+`ftd-py`: Python Package for Working With FTD/FASTN
+
+- Python Package for Working With `FTD/FASTN`
+- `ftd_django` is a Python package
+
+\-- end: example-product
+
+
+
+
+\-- ps.switcher: 
+products: $example-product
+
+-- site-doc.header: Properties:
+
+Below are details of all properties of this component.
+
+-- site-doc.component-property: `products`
+
+Its used to pass `products` record list 
+to `switcher` component.
+
+-- site-doc.property-header:
+
+-- site-doc.table-of-property: `products`
+type: Record
+default: Default
+
+-- end: site-doc.property-header
+
+-- end: site-doc.component-doc
+
+-- end: site-doc.doc-home
+
 
 
 
@@ -653,3 +728,61 @@ sub-title: `ftd-py` Documentation
 - `ftd_django` is a Python package
 
 -- end: example-product
+
+
+
+
+
+
+
+-- integer $current-product: 1
+
+-- integer $var-current-product: *$current-product
+
+-- ftd.color header-bg:
+light: rgba(45, 212, 143, 0.05)
+dark: rgba(45, 212, 143, 0.05)
+
+-- ftd.color shadow-color:
+light: rgba(45, 212, 191, 0.2)
+dark: rgba(45, 212, 191, 0.2)
+
+-- ftd.color shadow-color-right:
+light: rgba(45, 212, 191, 0.14)
+dark: rgba(45, 212, 191, 0.2)
+
+-- ftd.color shadow-color-left:
+light: rgba(45, 212, 191, 0.12)
+dark: rgba(45, 212, 191, 0.12)
+
+
+
+;; Below are functions::
+
+-- void toggle(value):
+boolean $value:
+
+value = !value;
+
+-- void set(value,v):
+boolean $value:
+boolean v:
+
+value = v
+
+
+-- void data(value,v):
+integer value:
+integer v:
+
+value = v
+
+
+-- void setdata(value,v):
+integer $value:
+integer v:
+
+value = v
+
+
+
