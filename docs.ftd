@@ -33,7 +33,7 @@ lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/product-switcher
 
--- site-doc.header: Invocation:
+-- site-doc.header: How to use?
 
 -- cb.code:
 lang: ftd
