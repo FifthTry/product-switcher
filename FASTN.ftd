@@ -2,6 +2,7 @@
 
 -- fastn.package: fifthtry.github.io/product-switcher
 
--- fastn.dependency: fifthtry.github.io/package-doc as pd
--- fastn.dependency: fifthtry.github.io/typography as tf
+-- fastn.dependency: fifthtry.github.io/code-block
+-- fastn.dependency: fastn-community.github.io/site-doc
+
  
