@@ -6,3 +6,12 @@
 -- fastn.dependency: fastn-community.github.io/site-doc
 
  
+
+
+-- fastn.sitemap:
+
+# Home: /
+
+- Documentation: /docs/
+
+# GitHub: https://github.com/FifthTry/product-switcher
